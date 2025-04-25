@@ -1,7 +1,7 @@
 
 import { Badge } from "./badge";
 import { cn } from "@/lib/utils";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export interface BrandCardProps {
@@ -10,6 +10,7 @@ export interface BrandCardProps {
   image: string;
   category: string;
   location?: string;
+  rating?: number;
   isVerified?: boolean;
   className?: string;
 }
@@ -20,6 +21,7 @@ export function BrandCard({
   image,
   category,
   location,
+  rating,
   isVerified = false,
   className,
 }: BrandCardProps) {
@@ -27,7 +29,7 @@ export function BrandCard({
     <Link
       to={`/brand/${id}`}
       className={cn(
-        "group relative overflow-hidden rounded-lg bg-white transition-all duration-300 hover-scale shadow-sm hover:shadow",
+        "group relative overflow-hidden rounded-lg bg-white transition-all duration-300 hover:scale-[1.02] shadow-sm hover:shadow-md",
         className
       )}
     >
@@ -45,12 +47,22 @@ export function BrandCard({
             <CheckCircle className="h-4 w-4 text-oma-gold" />
           )}
         </div>
-        <div className="mt-2 flex items-center justify-between">
+        <div className="mt-2 flex items-center gap-2">
           <Badge variant="outline" className="bg-oma-beige text-oma-cocoa border-oma-gold/20">
             {category}
           </Badge>
-          {location && <span className="text-xs text-muted-foreground">{location}</span>}
+          {rating && (
+            <div className="flex items-center text-sm text-oma-cocoa">
+              <Star className="h-4 w-4 text-oma-gold mr-1" />
+              <span>{rating.toFixed(1)}</span>
+            </div>
+          )}
         </div>
+        {location && (
+          <p className="mt-2 text-sm text-muted-foreground">
+            {location}
+          </p>
+        )}
       </div>
     </Link>
   );

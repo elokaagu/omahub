@@ -10,21 +10,21 @@ import { Link } from "react-router-dom";
 const carouselItems = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1534480573476-4d4a4361f16e?auto=format&fit=crop&q=80&w=1600",
+    image: "/lovable-uploads/827fb8c0-e5da-4520-a979-6fc054eefc6e.png",
     title: "New Season Collections",
     subtitle: "Discover the latest pieces from Africa's most innovative designers",
     link: "/directory"
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1523297467724-f6758d7124c5?auto=format&fit=crop&q=80&w=1600",
+    image: "/lovable-uploads/bb152c0b-6378-419b-a0e6-eafce44631b2.png",
     title: "Modern African Bridal",
     subtitle: "Redefining tradition with contemporary elegance",
     link: "/directory/bridal"
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1589756823695-278bc923f962?auto=format&fit=crop&q=80&w=1600",
+    image: "/lovable-uploads/de2841a8-58d1-4fd4-adfa-8c9aa09e9bb2.png",
     title: "Spotlight: Lagos Fashion Week",
     subtitle: "Meet the designers shaping the future of Nigerian fashion",
     link: "/directory/rtw"
@@ -34,7 +34,7 @@ const carouselItems = [
 const categories = [
   {
     title: "Bridal",
-    image: "https://images.unsplash.com/photo-1594320990326-937653b76dcd?auto=format&fit=crop&q=80&w=800",
+    image: "/lovable-uploads/57cc6a40-0f0d-4a7d-8786-41f15832ebfb.png",
     href: "/directory?category=bridal"
   },
   {
@@ -44,8 +44,8 @@ const categories = [
   },
   {
     title: "Tailoring",
-    image: "https://images.unsplash.com/photo-1605289355680-75fb41239154?auto=format&fit=crop&q=80&w=800",
-    href: "/directory?category=tailoring"
+    image: "/lovable-uploads/99ca757a-bed8-422e-b155-0b9d365b58e0.png",
+    href: "/directory?category=accessories"
   },
   {
     title: "Accessories",
@@ -54,66 +54,160 @@ const categories = [
   },
 ];
 
-const brandsData = [
-  {
-    id: "adire-designs",
-    name: "Adire Designs",
-    image: "https://images.unsplash.com/photo-1590735213920-68192a57bc71?auto=format&fit=crop&q=80&w=800",
-    category: "Ready-to-Wear",
-    location: "Lagos",
-    isVerified: true
-  },
-  {
-    id: "kente-collective",
-    name: "Kente Collective",
-    image: "https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?auto=format&fit=crop&q=80&w=800",
-    category: "Accessories",
-    location: "Accra",
-    isVerified: true
-  },
-  {
-    id: "zora-atelier",
-    name: "Zora Atelier",
-    image: "https://images.unsplash.com/photo-1589571891411-069af4905b77?auto=format&fit=crop&q=80&w=800",
-    category: "Bridal",
-    location: "Nairobi",
-    isVerified: true,
-    reviews: [
-      { id: 1, name: "Amara O.", text: "Absolutely stunning design, exceeded all my expectations!" },
-      { id: 2, name: "Chidi E.", text: "The craftsmanship is impeccable. Highly recommend!" },
-      { id: 3, name: "Fatima K.", text: "A perfect blend of tradition and modern elegance." }
-    ]
-  },
-  {
-    id: "mbali-studio",
-    name: "Mbali Studio",
-    image: "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?auto=format&fit=crop&q=80&w=800",
-    category: "Ready-to-Wear",
-    location: "Johannesburg",
-    isVerified: true
-  },
-  {
-    id: "cairo-couture",
-    name: "Cairo Couture",
-    image: "https://images.unsplash.com/photo-1605905337183-cc1b9e010bd0?auto=format&fit=crop&q=80&w=800",
-    category: "Tailoring",
-    location: "Cairo",
-    isVerified: true
-  },
-  {
-    id: "afrochic",
-    name: "AfroChic",
-    image: "https://images.unsplash.com/photo-1593795899768-947c4929449d?auto=format&fit=crop&q=80&w=800",
-    category: "Bridal",
-    location: "Dakar",
-    isVerified: false,
-    reviews: [
-      { id: 1, name: "Mariama S.", text: "The dress made me feel like royalty!" },
-      { id: 2, name: "Aminata D.", text: "Beautiful design with cultural significance." },
-      { id: 3, name: "Nadia B.", text: "Exceptional quality and attention to detail." }
-    ]
-  }
-];
+const brandsData = {
+  bridalBrands: [
+    {
+      id: "zora-atelier",
+      name: "Zora Atelier",
+      image: "/lovable-uploads/4f01c882-4b82-47ba-abfc-ce5e9b778ad1.png",
+      category: "Bridal",
+      location: "Nairobi",
+      rating: 5.0,
+      isVerified: true
+    },
+    {
+      id: "lagos-bridal",
+      name: "Lagos Bridal House",
+      image: "/lovable-uploads/bb152c0b-6378-419b-a0e6-eafce44631b2.png",
+      category: "Bridal",
+      location: "Lagos",
+      rating: 4.8,
+      isVerified: true
+    },
+    {
+      id: "afrique-elegance",
+      name: "Afrique Elegance",
+      image: "/lovable-uploads/57cc6a40-0f0d-4a7d-8786-41f15832ebfb.png",
+      category: "Bridal",
+      location: "Accra",
+      rating: 4.9,
+      isVerified: true
+    },
+    {
+      id: "afrochic",
+      name: "AfroChic",
+      image: "/lovable-uploads/5daa129b-ed11-4932-b7bd-aeb2b4e598f3.png",
+      category: "Bridal",
+      location: "Dakar",
+      rating: 4.7,
+      isVerified: false
+    }
+  ],
+  rtwBrands: [
+    {
+      id: "adire-designs",
+      name: "Adire Designs",
+      image: "/lovable-uploads/827fb8c0-e5da-4520-a979-6fc054eefc6e.png",
+      category: "Ready-to-Wear",
+      location: "Lagos",
+      rating: 4.8,
+      isVerified: true
+    },
+    {
+      id: "mbali-studio",
+      name: "Mbali Studio",
+      image: "/lovable-uploads/de2841a8-58d1-4fd4-adfa-8c9aa09e9bb2.png",
+      category: "Ready-to-Wear",
+      location: "Johannesburg",
+      rating: 4.9,
+      isVerified: true
+    },
+    {
+      id: "dakar-fashion",
+      name: "Dakar Fashion House",
+      image: "/lovable-uploads/4f01c882-4b82-47ba-abfc-ce5e9b778ad1.png",
+      category: "Ready-to-Wear",
+      location: "Dakar",
+      rating: 4.7,
+      isVerified: true
+    },
+    {
+      id: "nairobi-couture",
+      name: "Nairobi Couture",
+      image: "/lovable-uploads/5daa129b-ed11-4932-b7bd-aeb2b4e598f3.png",
+      category: "Ready-to-Wear",
+      location: "Nairobi",
+      rating: 4.6,
+      isVerified: true
+    }
+  ],
+  tailoringBrands: [
+    {
+      id: "cairo-couture",
+      name: "Cairo Couture",
+      image: "/lovable-uploads/99ca757a-bed8-422e-b155-0b9d365b58e0.png",
+      category: "Tailoring",
+      location: "Cairo",
+      rating: 4.9,
+      isVerified: true
+    },
+    {
+      id: "abuja-tailors",
+      name: "Abuja Master Tailors",
+      image: "/lovable-uploads/de2841a8-58d1-4fd4-adfa-8c9aa09e9bb2.png",
+      category: "Tailoring",
+      location: "Abuja",
+      rating: 4.8,
+      isVerified: true
+    },
+    {
+      id: "casablanca-style",
+      name: "Casablanca Style",
+      image: "/lovable-uploads/4f01c882-4b82-47ba-abfc-ce5e9b778ad1.png",
+      category: "Tailoring",
+      location: "Casablanca",
+      rating: 4.7,
+      isVerified: true
+    },
+    {
+      id: "addis-tailoring",
+      name: "Addis Fine Tailoring",
+      image: "/lovable-uploads/5daa129b-ed11-4932-b7bd-aeb2b4e598f3.png",
+      category: "Tailoring",
+      location: "Addis Ababa",
+      rating: 4.8,
+      isVerified: true
+    }
+  ],
+  accessoryBrands: [
+    {
+      id: "kente-collective",
+      name: "Kente Collective",
+      image: "/lovable-uploads/827fb8c0-e5da-4520-a979-6fc054eefc6e.png",
+      category: "Accessories",
+      location: "Accra",
+      rating: 4.9,
+      isVerified: true
+    },
+    {
+      id: "sahara-jewels",
+      name: "Sahara Jewels",
+      image: "/lovable-uploads/bb152c0b-6378-419b-a0e6-eafce44631b2.png",
+      category: "Accessories",
+      location: "Marrakech",
+      rating: 4.8,
+      isVerified: true
+    },
+    {
+      id: "lagos-leather",
+      name: "Lagos Leather",
+      image: "/lovable-uploads/4f01c882-4b82-47ba-abfc-ce5e9b778ad1.png",
+      category: "Accessories",
+      location: "Lagos",
+      rating: 4.7,
+      isVerified: true
+    },
+    {
+      id: "nubian-accessories",
+      name: "Nubian Accessories",
+      image: "/lovable-uploads/5daa129b-ed11-4932-b7bd-aeb2b4e598f3.png",
+      category: "Accessories",
+      location: "Khartoum",
+      rating: 4.6,
+      isVerified: true
+    }
+  ]
+};
 
 const editorsPickItems = [
   {
@@ -126,10 +220,10 @@ const editorsPickItems = [
 ];
 
 const Index = () => {
-  const bridalBrands = brandsData.filter(brand => brand.category === "Bridal");
-  const rtwBrands = brandsData.filter(brand => brand.category === "Ready-to-Wear");
-  const tailoringBrands = brandsData.filter(brand => brand.category === "Tailoring");
-  const accessoryBrands = brandsData.filter(brand => brand.category === "Accessories");
+  const bridalBrands = brandsData.bridalBrands;
+  const rtwBrands = brandsData.rtwBrands;
+  const tailoringBrands = brandsData.tailoringBrands;
+  const accessoryBrands = brandsData.accessoryBrands;
 
   return (
     <Layout>
