@@ -1,5 +1,4 @@
-
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft as ArrowLeft, ChevronRight as ArrowRight } from "lucide-react";
 import { Button } from "./button";
 import { BrandCard } from "./brand-card";
 import { useState, useRef } from "react";
@@ -53,7 +52,7 @@ export function BrandRow({ title, brands }: BrandRowProps) {
           className="absolute -left-4 top-1/2 -translate-y-1/2 opacity-0 transition-opacity group-hover:opacity-100 bg-white/80 backdrop-blur-sm"
           onClick={() => scroll("left")}
         >
-          <ChevronLeft className="h-4 w-4" />
+          <ArrowLeft className="h-4 w-4" />
         </Button>
 
         <Button
@@ -62,7 +61,7 @@ export function BrandRow({ title, brands }: BrandRowProps) {
           className="absolute -right-4 top-1/2 -translate-y-1/2 opacity-0 transition-opacity group-hover:opacity-100 bg-white/80 backdrop-blur-sm"
           onClick={() => scroll("right")}
         >
-          <ChevronRight className="h-4 w-4" />
+          <ArrowRight className="h-4 w-4" />
         </Button>
       </div>
     </div>

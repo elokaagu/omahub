@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
@@ -6,6 +5,7 @@ import { Carousel } from "@/components/ui/carousel-custom";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, MapPin, Star } from "lucide-react";
+import { ContactDesignerModal } from "@/components/ui/contact-designer-modal";
 
 // Mock data for brand profiles
 const brandsData = {
@@ -17,7 +17,26 @@ const brandsData = {
     priceRange: "₦15,000 - ₦120,000",
     category: "Ready-to-Wear",
     rating: 4.8,
-    reviews: 56,
+    reviews: [
+      {
+        author: "Ngozi Okafor",
+        comment: "Absolutely stunning designs! The quality of the adire fabric is exceptional, and the fit is perfect. I always get compliments when I wear my Adire Designs piece.",
+        rating: 5,
+        date: "2024-03-15"
+      },
+      {
+        author: "Chike Obi",
+        comment: "I love how Adire Designs blends traditional techniques with modern styles. Their clothing is unique and makes a statement. Highly recommend!",
+        rating: 4,
+        date: "2024-02-28"
+      },
+      {
+        author: "Aisha Bello",
+        comment: "The customer service was excellent, and I received my order quickly. The adire top I purchased is beautiful and well-made. Will definitely be buying more!",
+        rating: 5,
+        date: "2024-01-10"
+      }
+    ],
     isVerified: true,
     collections: [
       {
@@ -45,7 +64,26 @@ const brandsData = {
     priceRange: "GH₵200 - GH₵1,500",
     category: "Accessories",
     rating: 4.7,
-    reviews: 39,
+    reviews: [
+      {
+        author: "Ama Serwaa",
+        comment: "I am in love with my Kente Collective bag! The colors are so vibrant, and the craftsmanship is impeccable. It's a true statement piece.",
+        rating: 5,
+        date: "2024-03-01"
+      },
+      {
+        author: "Kwame Nkrumah",
+        comment: "The Kente Collective jewelry is unique and beautifully made. I appreciate the brand's commitment to ethical production and supporting local artisans.",
+        rating: 4,
+        date: "2024-02-15"
+      },
+      {
+        author: "Abena Yeboah",
+        comment: "I bought a Kente Collective scarf as a gift, and it was a huge hit! The recipient loved the vibrant colors and the story behind the design.",
+        rating: 5,
+        date: "2024-01-20"
+      }
+    ],
     isVerified: true,
     collections: [
       {
@@ -73,7 +111,26 @@ const brandsData = {
     priceRange: "KSh 75,000 - KSh 500,000",
     category: "Bridal",
     rating: 5.0,
-    reviews: 28,
+    reviews: [
+      {
+        author: "Imani Wanjiku",
+        comment: "Zora Atelier created the most breathtaking wedding gown I could have ever imagined. The attention to detail and the incorporation of traditional Kenyan elements were simply stunning.",
+        rating: 5,
+        date: "2024-03-10"
+      },
+      {
+        author: "Akinyi Odongo",
+        comment: "I was so impressed with the professionalism and creativity of Zora Atelier. They truly listened to my vision and brought it to life in the most beautiful way.",
+        rating: 5,
+        date: "2024-02-20"
+      },
+      {
+        author: "Fatima Hassan",
+        comment: "Zora Atelier is a true gem in the world of bridal design. Their gowns are works of art, and their customer service is exceptional. I highly recommend them to any bride looking for a unique and unforgettable gown.",
+        rating: 5,
+        date: "2024-01-05"
+      }
+    ],
     isVerified: true,
     collections: [
       {
@@ -101,7 +158,26 @@ const brandsData = {
     priceRange: "R1,200 - R15,000",
     category: "Ready-to-Wear",
     rating: 4.9,
-    reviews: 42,
+    reviews: [
+      {
+        author: "Nomusa Dlamini",
+        comment: "Mbali Studio's silk pieces are absolutely divine! The colors are so rich, and the fabric feels luxurious against my skin. I always feel like a work of art when I wear their designs.",
+        rating: 5,
+        date: "2024-03-05"
+      },
+      {
+        author: "Sipho Ndlovu",
+        comment: "I appreciate Mbali Studio's commitment to sustainability and ethical production. Their clothing is not only beautiful but also made with a conscience.",
+        rating: 4,
+        date: "2024-02-10"
+      },
+      {
+        author: "Zanele Nkosi",
+        comment: "I bought a Mbali Studio scarf as a gift for my mother, and she absolutely loved it! The quality is exceptional, and the design is timeless.",
+        rating: 5,
+        date: "2024-01-15"
+      }
+    ],
     isVerified: true,
     collections: [
       {
@@ -176,7 +252,7 @@ const BrandProfile = () => {
               <span>{brand.location}</span>
               <div className="flex items-center ml-6">
                 <Star size={16} className="mr-1 text-oma-gold" />
-                <span>{brand.rating} ({brand.reviews} reviews)</span>
+                <span>{brand.rating} ({brand.reviews.length} reviews)</span>
               </div>
             </div>
             
@@ -226,18 +302,37 @@ const BrandProfile = () => {
               
               <Separator className="my-6 bg-oma-gold/20" />
               
-              <Button className="w-full bg-oma-plum hover:bg-oma-plum/90">
-                Contact Designer
-              </Button>
+              <ContactDesignerModal designerName={brand.name}>
+                <Button className="w-full bg-oma-plum hover:bg-oma-plum/90">
+                  Contact Designer
+                </Button>
+              </ContactDesignerModal>
             </div>
           </div>
 
-          {/* Reviews Section - Placeholder for future implementation */}
+          {/* Reviews Section */}
           <div className="my-12 border border-oma-gold/20 rounded-lg p-6 bg-oma-beige/30">
-            <h2 className="heading-sm mb-2">Customer Reviews</h2>
-            <p className="text-oma-cocoa">
-              Review functionality coming soon. {brand.name} currently has {brand.reviews} verified reviews with an average rating of {brand.rating}/5.
-            </p>
+            <h2 className="heading-sm mb-6">Customer Reviews</h2>
+            <div className="space-y-6">
+              {brand.reviews?.map((review, index) => (
+                <div key={index} className="border-b border-oma-gold/10 last:border-0 pb-4 last:pb-0">
+                  <div className="flex items-center mb-2">
+                    <div className="flex items-center">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          size={16}
+                          className={i < review.rating ? "text-oma-gold" : "text-oma-gold/20"}
+                        />
+                      ))}
+                    </div>
+                    <span className="ml-2 text-sm text-oma-cocoa">{review.date}</span>
+                  </div>
+                  <p className="text-oma-black mb-2">{review.comment}</p>
+                  <p className="text-sm text-oma-cocoa">- {review.author}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

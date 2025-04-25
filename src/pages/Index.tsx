@@ -93,6 +93,12 @@ const editorsPickItems = [
 ];
 
 const Index = () => {
+  // Filter brands by category
+  const bridalBrands = brandsData.filter(brand => brand.category === "Bridal");
+  const rtwBrands = brandsData.filter(brand => brand.category === "Ready-to-Wear");
+  const tailoringBrands = brandsData.filter(brand => brand.category === "Tailoring");
+  const accessoryBrands = brandsData.filter(brand => brand.category === "Accessories");
+
   return (
     <Layout>
       {/* Hero Section with Carousel */}
@@ -121,6 +127,16 @@ const Index = () => {
               href={category.href}
             />
           ))}
+        </div>
+      </section>
+
+      {/* Category-specific Rows */}
+      <section className="py-16 px-6">
+        <div className="max-w-7xl mx-auto">
+          <BrandRow title="African Bridal Designers" brands={bridalBrands} />
+          <BrandRow title="Ready-to-Wear Collections" brands={rtwBrands} />
+          <BrandRow title="Expert Tailors" brands={tailoringBrands} />
+          <BrandRow title="Accessories & More" brands={accessoryBrands} />
         </div>
       </section>
 
@@ -160,7 +176,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Brands Section with Row */}
+      {/* Featured Brands Section */}
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <BrandRow title="Featured Brands" brands={featuredBrands} />
