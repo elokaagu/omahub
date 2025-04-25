@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -75,6 +74,7 @@ export default {
 				canela: ['Canela', 'serif'],
 				suisse: ['Suisse', 'sans-serif'],
 				gotham: ['Gotham Book', 'sans-serif'],
+				'script': ['Brush Script MT', 'Satisfy', 'cursive'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

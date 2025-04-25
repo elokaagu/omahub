@@ -94,6 +94,10 @@
   .caption {
     @apply font-suisse text-xs uppercase tracking-wide;
   }
+  
+  .italic-serif {
+    @apply font-script italic;
+  }
 }
 
 /* Using system fonts as fallbacks for our custom fonts */

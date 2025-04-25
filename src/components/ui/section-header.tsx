@@ -1,4 +1,3 @@
-
 import { cn } from "@/lib/utils";
 
 interface SectionHeaderProps {
@@ -8,6 +7,7 @@ interface SectionHeaderProps {
   className?: string;
   titleClassName?: string;
   subtitleClassName?: string;
+  italic?: boolean;
 }
 
 export function SectionHeader({
@@ -17,6 +17,7 @@ export function SectionHeader({
   className,
   titleClassName,
   subtitleClassName,
+  italic = false,
 }: SectionHeaderProps) {
   return (
     <div className={cn(
@@ -26,6 +27,7 @@ export function SectionHeader({
     )}>
       <h2 className={cn(
         "heading-md text-oma-black",
+        italic ? "italic-serif" : "",
         titleClassName
       )}>
         {title}

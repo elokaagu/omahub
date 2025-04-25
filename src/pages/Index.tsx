@@ -312,6 +312,7 @@ const Index = () => {
         <SectionHeader 
           title="Discover by Category"
           subtitle="Explore the finest African designers across different specialties"
+          italic={true}
         />
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -331,6 +332,7 @@ const Index = () => {
           <SectionHeader 
             title="Editor's Pick"
             subtitle="Our spotlight on designers making waves in African fashion"
+            italic={true}
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
