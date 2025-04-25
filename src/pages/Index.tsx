@@ -298,14 +298,56 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-gradient-to-r from-oma-gold/20 to-oma-cocoa/20">
-        <div className="max-w-3xl mx-auto text-center">
+      <section className="py-20 px-6 bg-gradient-to-r from-oma-plum via-oma-gold to-oma-cocoa relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10" />
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <SectionHeader 
-            title="Join Our Newsletter"
-            subtitle="Stay connected with the latest designers, collections and events in the African fashion scene."
+            title="Join Our Fashion Community"
+            subtitle="Get exclusive previews, designer spotlights, and early access to new collections straight to your inbox."
             centered={true}
+            titleClassName="text-white"
+            subtitleClassName="text-white/90"
           />
-          <NewsletterForm className="max-w-md mx-auto" />
+          
+          <div className="mt-8 bg-white/95 backdrop-blur-sm p-8 rounded-2xl shadow-xl max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="text-left">
+                <h4 className="font-semibold text-oma-plum mb-2">✨ What You'll Get</h4>
+                <ul className="space-y-2 text-sm text-oma-cocoa">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-oma-gold"/>
+                    Early access to new collections
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-oma-gold"/>
+                    Exclusive designer interviews
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-oma-gold"/>
+                    Special event invitations
+                  </li>
+                </ul>
+              </div>
+              <div className="text-left">
+                <h4 className="font-semibold text-oma-plum mb-2">🎉 Member Benefits</h4>
+                <ul className="space-y-2 text-sm text-oma-cocoa">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-oma-gold"/>
+                    VIP access to sales
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-oma-gold"/>
+                    Trend forecasts & style tips
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1 h-1 rounded-full bg-oma-gold"/>
+                    Styling consultation invites
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <NewsletterForm className="max-w-md mx-auto" />
+          </div>
         </div>
       </section>
     </Layout>

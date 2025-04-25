@@ -8,7 +8,6 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Directory from "./pages/Directory";
 import BrandProfile from "./pages/BrandProfile";
-import Newsletter from "./pages/Newsletter";
 import Join from "./pages/Join";
 import NotFound from "./pages/NotFound";
 
@@ -25,7 +24,6 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/directory" element={<Directory />} />
           <Route path="/brand/:id" element={<BrandProfile />} />
-          <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/join" element={<Join />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

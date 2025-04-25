@@ -27,9 +27,9 @@ const About = () => {
           </div>
           <div className="order-1 lg:order-2">
             <img 
-              src="https://images.unsplash.com/photo-1616150840617-a0124ea72d1a?auto=format&fit=crop&q=80&w=1400"
-              alt="Oma Hub Fashion Design" 
-              className="rounded-2xl shadow-lg w-full h-[400px] object-cover"
+              src="/lovable-uploads/ecd30635-4578-4835-8c10-63882603a3f1.png"
+              alt="African Fashion Innovation" 
+              className="rounded-2xl shadow-lg w-full h-[600px] object-cover"
             />
           </div>
         </div>
