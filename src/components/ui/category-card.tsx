@@ -26,7 +26,7 @@ export function CategoryCard({ title, image, href, className }: CategoryCardProp
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         <div className="absolute bottom-0 left-0 p-6">
-          <h3 className="font-canela text-2xl text-white">{title}</h3>
+          <h3 className="font-luxurious-script text-3xl text-white">{title}</h3>
           <span className="mt-2 inline-block text-white/90 text-sm expand-underline">
             Discover More
           </span>
