@@ -41,26 +41,22 @@ export function BrandRow({ title, brands }: BrandRowProps) {
         <h2 className="heading-sm mb-6 hover:text-oma-plum transition-colors">{title}</h2>
       </Link>
       
-      <div className="group relative">
+      <div className="relative">
         <div
           ref={rowRef}
           className="flex space-x-6 overflow-x-scroll scrollbar-hide snap-x snap-mandatory"
         >
           {brands.map((brand) => (
-            <Link 
-              key={brand.id}
-              to={`/brand/${brand.id}`}
-              className="w-[300px] flex-none snap-start"
-            >
+            <div key={brand.id} className="w-[300px] flex-none snap-start hover:scale-[1.02] transition-transform duration-300">
               <BrandCard {...brand} />
-            </Link>
+            </div>
           ))}
         </div>
 
         <Button
           variant="outline"
           size="icon"
-          className="absolute -left-4 top-1/2 -translate-y-1/2 opacity-0 transition-opacity group-hover:opacity-100 bg-white/80 backdrop-blur-sm"
+          className="absolute -left-4 top-1/2 -translate-y-1/2 opacity-0 hover:opacity-100 transition-opacity bg-white/80 backdrop-blur-sm"
           onClick={() => scroll("left")}
         >
           <ArrowLeft className="h-4 w-4" />
@@ -69,7 +65,7 @@ export function BrandRow({ title, brands }: BrandRowProps) {
         <Button
           variant="outline"
           size="icon"
-          className="absolute -right-4 top-1/2 -translate-y-1/2 opacity-0 transition-opacity group-hover:opacity-100 bg-white/80 backdrop-blur-sm"
+          className="absolute -right-4 top-1/2 -translate-y-1/2 opacity-0 hover:opacity-100 transition-opacity bg-white/80 backdrop-blur-sm"
           onClick={() => scroll("right")}
         >
           <ArrowRight className="h-4 w-4" />
@@ -77,4 +73,4 @@ export function BrandRow({ title, brands }: BrandRowProps) {
       </div>
     </div>
   );
-};
+}
