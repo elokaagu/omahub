@@ -11,21 +11,21 @@ import { Link } from "react-router-dom";
 const carouselItems = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&q=80&w=1600",
+    image: "https://images.unsplash.com/photo-1534480573476-4d4a4361f16e?auto=format&fit=crop&q=80&w=1600",
     title: "New Season Collections",
     subtitle: "Discover the latest pieces from Africa's most innovative designers",
     link: "/directory"
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1600",
+    image: "https://images.unsplash.com/photo-1523297467724-f6758d7124c5?auto=format&fit=crop&q=80&w=1600",
     title: "Modern African Bridal",
     subtitle: "Redefining tradition with contemporary elegance",
     link: "/directory/bridal"
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80&w=1600",
+    image: "https://images.unsplash.com/photo-1589756823695-278bc923f962?auto=format&fit=crop&q=80&w=1600",
     title: "Spotlight: Lagos Fashion Week",
     subtitle: "Meet the designers shaping the future of Nigerian fashion",
     link: "/directory/rtw"
@@ -35,22 +35,22 @@ const carouselItems = [
 const categories = [
   {
     title: "Bridal",
-    image: "https://images.unsplash.com/photo-1579547945413-497e1b99dac0?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1594320990326-937653b76dcd?auto=format&fit=crop&q=80&w=800",
     href: "/directory?category=bridal"
   },
   {
     title: "Ready-to-Wear",
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1624454002053-876dd95c1fc1?auto=format&fit=crop&q=80&w=800",
     href: "/directory?category=rtw"
   },
   {
     title: "Tailoring",
-    image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1605289355680-75fb41239154?auto=format&fit=crop&q=80&w=800",
     href: "/directory?category=tailoring"
   },
   {
     title: "Accessories",
-    image: "https://images.unsplash.com/photo-1611085583191-a3b181a88552?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1614938550528-eec6715f1746?auto=format&fit=crop&q=80&w=800",
     href: "/directory?category=accessories"
   },
 ];
@@ -59,7 +59,7 @@ const featuredBrands = [
   {
     id: "adire-designs",
     name: "Adire Designs",
-    image: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1590735213920-68192a57bc71?auto=format&fit=crop&q=80&w=800",
     category: "Ready-to-Wear",
     location: "Lagos",
     isVerified: true
@@ -67,7 +67,7 @@ const featuredBrands = [
   {
     id: "kente-collective",
     name: "Kente Collective",
-    image: "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?auto=format&fit=crop&q=80&w=800",
     category: "Accessories",
     location: "Accra",
     isVerified: true
@@ -75,7 +75,7 @@ const featuredBrands = [
   {
     id: "zora-atelier",
     name: "Zora Atelier",
-    image: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1589571891411-069af4905b77?auto=format&fit=crop&q=80&w=800",
     category: "Bridal",
     location: "Nairobi",
     isVerified: true
@@ -85,7 +85,7 @@ const featuredBrands = [
 const editorsPickItems = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?auto=format&fit=crop&q=80&w=800",
     title: "Editor's Pick: Mbali Studio",
     subtitle: "Luxurious silk pieces with contemporary African patterns",
     link: "/brand/mbali-studio"
