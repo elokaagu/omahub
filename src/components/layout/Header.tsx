@@ -34,13 +34,13 @@ export default function Header() {
         'fixed top-0 w-full z-50 transition-all duration-300',
         scrolled ? 'bg-oma-cream/90 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'
       )}>
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 lg:px-6">
           <div className="flex lg:flex-1">
             <Link to="/" className="-m-1.5 p-1.5">
               <img 
                 src="/lovable-uploads/dc25584e-502c-48aa-bcd9-42a356c77c1c.png" 
                 alt="Oma Hub" 
-                className="h-6 w-auto"
+                className="h-4 w-auto"
               />
             </Link>
           </div>

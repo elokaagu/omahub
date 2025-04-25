@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "./button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -112,7 +111,7 @@ export function Carousel({
             {overlay && (
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             )}
-            <div className="absolute bottom-1/3 left-0 p-6 md:p-10 text-white z-20">
+            <div className="absolute bottom-1/3 left-0 p-4 md:p-6 text-white z-20">
               <h3 className="font-canela text-3xl md:text-5xl mb-2">
                 {item.title}
               </h3>
