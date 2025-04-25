@@ -1,0 +1,57 @@
+
+import { Badge } from "./badge";
+import { cn } from "@/lib/utils";
+import { CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
+
+export interface BrandCardProps {
+  id: string;
+  name: string;
+  image: string;
+  category: string;
+  location?: string;
+  isVerified?: boolean;
+  className?: string;
+}
+
+export function BrandCard({
+  id,
+  name,
+  image,
+  category,
+  location,
+  isVerified = false,
+  className,
+}: BrandCardProps) {
+  return (
+    <Link
+      to={`/brand/${id}`}
+      className={cn(
+        "group relative overflow-hidden rounded-lg bg-white transition-all duration-300 hover-scale shadow-sm hover:shadow",
+        className
+      )}
+    >
+      <div className="aspect-[3/4] w-full overflow-hidden bg-gray-200">
+        <img
+          src={image}
+          alt={name}
+          className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+      <div className="p-4">
+        <div className="flex items-center justify-between">
+          <h3 className="font-semibold text-lg">{name}</h3>
+          {isVerified && (
+            <CheckCircle className="h-4 w-4 text-oma-gold" />
+          )}
+        </div>
+        <div className="mt-2 flex items-center justify-between">
+          <Badge variant="outline" className="bg-oma-beige text-oma-cocoa border-oma-gold/20">
+            {category}
+          </Badge>
+          {location && <span className="text-xs text-muted-foreground">{location}</span>}
+        </div>
+      </div>
+    </Link>
+  );
+}
