@@ -1,9 +1,8 @@
-
 import Layout from "@/components/layout/Layout";
 import { Carousel } from "@/components/ui/carousel-custom";
 import { SectionHeader } from "@/components/ui/section-header";
 import { CategoryCard } from "@/components/ui/category-card";
-import { BrandCard } from "@/components/ui/brand-card";
+import { BrandRow } from "@/components/ui/brand-row";
 import { NewsletterForm } from "@/components/ui/newsletter-form";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -161,34 +160,16 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Brands Section */}
-      <section className="py-16 px-6 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
-          <SectionHeader 
-            title="Featured Brands"
-            subtitle="Hand-picked designers making waves on the continent"
-            className="mb-0"
-          />
-          <Link 
-            to="/directory"
-            className="text-oma-plum font-medium hover:text-oma-plum/80 expand-underline mt-4 md:mt-0"
-          >
-            View All Brands
-          </Link>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredBrands.map((brand) => (
-            <BrandCard 
-              key={brand.id}
-              id={brand.id}
-              name={brand.name}
-              image={brand.image}
-              category={brand.category}
-              location={brand.location}
-              isVerified={brand.isVerified}
-            />
-          ))}
+      {/* Featured Brands Section with Row */}
+      <section className="py-16 px-6">
+        <div className="max-w-7xl mx-auto">
+          <BrandRow title="Featured Brands" brands={featuredBrands} />
+          
+          <div className="mt-8 text-center">
+            <Button asChild variant="outline" className="hover:bg-oma-beige">
+              <Link to="/directory">View All Brands</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
