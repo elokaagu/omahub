@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -6,7 +5,11 @@ export default function Footer() {
     <footer className="bg-oma-beige border-t border-oma-gold/20">
       <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
         <div className="md:w-1/3">
-          <h3 className="font-canela text-3xl mb-4">Oma Hub</h3>
+          <img 
+            src="/lovable-uploads/dc25584e-502c-48aa-bcd9-42a356c77c1c.png" 
+            alt="Oma Hub" 
+            className="h-8 w-auto mb-4"
+          />
           <p className="text-oma-cocoa mb-6 max-w-md">
             Spotlighting Africa's emerging designers through a carefully curated platform that celebrates craftsmanship, creativity, and culture.
           </p>
@@ -31,11 +34,6 @@ export default function Footer() {
                   Directory
                 </Link>
               </li>
-              <li>
-                <Link to="/newsletter" className="text-oma-cocoa hover:text-oma-plum expand-underline">
-                  Newsletter
-                </Link>
-              </li>
             </ul>
           </div>
           <div>
@@ -47,14 +45,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-oma-cocoa hover:text-oma-plum expand-underline">
+                <Link to="/privacy-policy" className="text-oma-cocoa hover:text-oma-plum expand-underline">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-oma-cocoa hover:text-oma-plum expand-underline">
+                <Link to="/terms-of-service" className="text-oma-cocoa hover:text-oma-plum expand-underline">
                   Terms of Service
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

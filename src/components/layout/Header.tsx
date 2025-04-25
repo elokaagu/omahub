@@ -9,7 +9,6 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Directory', href: '/directory' },
-  { name: 'Newsletter', href: '/newsletter' },
 ];
 
 export default function Header() {
@@ -38,7 +37,11 @@ export default function Header() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
           <div className="flex lg:flex-1">
             <Link to="/" className="-m-1.5 p-1.5">
-              <span className="font-canela text-2xl font-medium">Oma Hub</span>
+              <img 
+                src="/lovable-uploads/dc25584e-502c-48aa-bcd9-42a356c77c1c.png" 
+                alt="Oma Hub" 
+                className="h-8 w-auto"
+              />
             </Link>
           </div>
           <div className="flex lg:hidden">
