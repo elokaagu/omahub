@@ -40,7 +40,7 @@ export default function Header() {
               <img 
                 src="/lovable-uploads/dc25584e-502c-48aa-bcd9-42a356c77c1c.png" 
                 alt="Oma Hub" 
-                className="h-8 w-auto"
+                className="h-6 w-auto"
               />
             </Link>
           </div>
