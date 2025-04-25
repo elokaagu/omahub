@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -14,7 +15,7 @@ const allBrands = [
   {
     id: "adire-designs",
     name: "Adire Designs",
-    image: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?auto=format&fit=crop&q=80&w=800",
+    image: "/lovable-uploads/90f81e12-d22e-4e01-b75b-d3bad4db5e45.png",
     category: "Ready-to-Wear",
     location: "Lagos",
     isVerified: true
@@ -22,7 +23,7 @@ const allBrands = [
   {
     id: "kente-collective",
     name: "Kente Collective",
-    image: "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&q=80&w=800",
+    image: "/lovable-uploads/6f7a1022-2d82-4fb9-9365-6455df679707.png",
     category: "Accessories",
     location: "Accra",
     isVerified: true
@@ -30,7 +31,7 @@ const allBrands = [
   {
     id: "zora-atelier",
     name: "Zora Atelier",
-    image: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&q=80&w=800",
+    image: "/lovable-uploads/41fa65eb-36f2-4987-8c7b-a267b4d0e938.png",
     category: "Bridal",
     location: "Nairobi",
     isVerified: true
@@ -38,7 +39,7 @@ const allBrands = [
   {
     id: "mbali-studio",
     name: "Mbali Studio",
-    image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=800",
+    image: "/lovable-uploads/e0e57209-1802-453b-a78e-7c7090a85e58.png",
     category: "Ready-to-Wear",
     location: "Johannesburg",
     isVerified: true
@@ -46,7 +47,7 @@ const allBrands = [
   {
     id: "afrochic",
     name: "AfroChic",
-    image: "https://images.unsplash.com/photo-1593795899768-947c4929449d?auto=format&fit=crop&q=80&w=800",
+    image: "/lovable-uploads/abb12cfd-a40d-4890-bfd6-76feb4764069.png",
     category: "Ready-to-Wear",
     location: "Dakar",
     isVerified: false
@@ -54,7 +55,7 @@ const allBrands = [
   {
     id: "beads-by-nneka",
     name: "Beads by Nneka",
-    image: "https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?auto=format&fit=crop&q=80&w=800",
+    image: "/lovable-uploads/b3fb585e-93cf-4aa7-9204-0a1b477fcb06.png",
     category: "Accessories",
     location: "Abuja",
     isVerified: true
@@ -62,7 +63,7 @@ const allBrands = [
   {
     id: "marrakech-textiles",
     name: "Marrakech Textiles",
-    image: "https://images.unsplash.com/photo-1532699432450-a9fc47b1c9cb?auto=format&fit=crop&q=80&w=800",
+    image: "/lovable-uploads/ee92bbfa-4f54-4567-b4ef-8aebd0bca695.png",
     category: "Accessories",
     location: "Marrakech",
     isVerified: false
@@ -70,7 +71,7 @@ const allBrands = [
   {
     id: "cairo-couture",
     name: "Cairo Couture",
-    image: "https://images.unsplash.com/photo-1605905337183-cc1b9e010bd0?auto=format&fit=crop&q=80&w=800",
+    image: "/lovable-uploads/592425d5-0327-465c-990c-c63a73645792.png",
     category: "Tailoring",
     location: "Cairo",
     isVerified: true
@@ -78,7 +79,7 @@ const allBrands = [
   {
     id: "ananse-weaving",
     name: "Ananse Weaving",
-    image: "https://images.unsplash.com/photo-1573566291259-fd494a326b60?auto=format&fit=crop&q=80&w=800",
+    image: "/lovable-uploads/8bd685d2-cad8-4639-982a-cb5c7087443c.png",
     category: "Accessories",
     location: "Kumasi",
     isVerified: true
