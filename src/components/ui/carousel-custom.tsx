@@ -1,7 +1,8 @@
+
 import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useEmblaCarousel } from 'embla-carousel/react'
+import { useEmblaCarousel } from 'embla-carousel-react';
 import { Link } from "react-router-dom";
 
 interface CarouselItem {
@@ -16,7 +17,7 @@ interface CarouselProps {
   items: CarouselItem[];
   autoplay?: boolean;
   interval?: number;
-  aspectRatio?: "landscape" | "portrait" | "video";
+  aspectRatio?: "landscape" | "portrait" | "video" | "wide";
   className?: string;
   showControls?: boolean;
 }
@@ -71,7 +72,13 @@ export function Carousel({ items, autoplay = false, interval = 5000, aspectRatio
   }, [emblaApi, autoplay, interval, scrollTo]);
 
   return (
-    <div className={cn("relative overflow-hidden", aspectRatio === "wide" ? "aspect-[2/1]" : aspectRatio === "portrait" ? "aspect-[3/4]" : "aspect-video", className)}>
+    <div className={cn("relative overflow-hidden", 
+      aspectRatio === "wide" ? "aspect-[2/1]" : 
+      aspectRatio === "portrait" ? "aspect-[3/4]" : 
+      aspectRatio === "video" ? "aspect-video" : 
+      "aspect-[16/9]", 
+      className)}
+    >
       {showControls && (
         <>
           <Button
