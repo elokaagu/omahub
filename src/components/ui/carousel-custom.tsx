@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useEmblaCarousel } from 'embla-carousel-react';
+import useEmblaCarousel from 'embla-carousel-react';
 import { Link } from "react-router-dom";
 
 interface CarouselItem {
