@@ -55,82 +55,6 @@ const categories = [
   },
 ];
 
-// Define brandsData to fix the reference error
-const brandsData = [
-  {
-    id: "adire-designs",
-    name: "Adire Designs",
-    image: "https://images.unsplash.com/photo-1590735213920-68192a57bc71?auto=format&fit=crop&q=80&w=800",
-    category: "Ready-to-Wear",
-    location: "Lagos",
-    isVerified: true
-  },
-  {
-    id: "kente-collective",
-    name: "Kente Collective",
-    image: "https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?auto=format&fit=crop&q=80&w=800",
-    category: "Accessories",
-    location: "Accra",
-    isVerified: true
-  },
-  {
-    id: "zora-atelier",
-    name: "Zora Atelier",
-    image: "https://images.unsplash.com/photo-1589571891411-069af4905b77?auto=format&fit=crop&q=80&w=800",
-    category: "Bridal",
-    location: "Nairobi",
-    isVerified: true
-  },
-  {
-    id: "mbali-studio",
-    name: "Mbali Studio",
-    image: "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?auto=format&fit=crop&q=80&w=800",
-    category: "Ready-to-Wear",
-    location: "Johannesburg",
-    isVerified: true
-  },
-  {
-    id: "afrochic",
-    name: "AfroChic",
-    image: "https://images.unsplash.com/photo-1593795899768-947c4929449d?auto=format&fit=crop&q=80&w=800",
-    category: "Ready-to-Wear",
-    location: "Dakar",
-    isVerified: false
-  },
-  {
-    id: "beads-by-nneka",
-    name: "Beads by Nneka",
-    image: "https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?auto=format&fit=crop&q=80&w=800",
-    category: "Accessories",
-    location: "Abuja",
-    isVerified: true
-  },
-  {
-    id: "marrakech-textiles",
-    name: "Marrakech Textiles",
-    image: "https://images.unsplash.com/photo-1532699432450-a9fc47b1c9cb?auto=format&fit=crop&q=80&w=800",
-    category: "Accessories",
-    location: "Marrakech",
-    isVerified: false
-  },
-  {
-    id: "cairo-couture",
-    name: "Cairo Couture",
-    image: "https://images.unsplash.com/photo-1605905337183-cc1b9e010bd0?auto=format&fit=crop&q=80&w=800",
-    category: "Tailoring",
-    location: "Cairo",
-    isVerified: true
-  },
-  {
-    id: "ananse-weaving",
-    name: "Ananse Weaving",
-    image: "https://images.unsplash.com/photo-1573566291259-fd494a326b60?auto=format&fit=crop&q=80&w=800",
-    category: "Accessories",
-    location: "Kumasi",
-    isVerified: true
-  }
-];
-
 const featuredBrands = [
   {
     id: "adire-designs",
@@ -169,12 +93,6 @@ const editorsPickItems = [
 ];
 
 const Index = () => {
-  // Filter brands by category
-  const bridalBrands = brandsData.filter(brand => brand.category === "Bridal");
-  const rtwBrands = brandsData.filter(brand => brand.category === "Ready-to-Wear");
-  const tailoringBrands = brandsData.filter(brand => brand.category === "Tailoring");
-  const accessoryBrands = brandsData.filter(brand => brand.category === "Accessories");
-
   return (
     <Layout>
       {/* Hero Section with Carousel */}
@@ -203,16 +121,6 @@ const Index = () => {
               href={category.href}
             />
           ))}
-        </div>
-      </section>
-
-      {/* Category-specific Rows */}
-      <section className="py-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <BrandRow title="African Bridal Designers" brands={bridalBrands} />
-          <BrandRow title="Ready-to-Wear Collections" brands={rtwBrands} />
-          <BrandRow title="Expert Tailors" brands={tailoringBrands} />
-          <BrandRow title="Accessories & More" brands={accessoryBrands} />
         </div>
       </section>
 
