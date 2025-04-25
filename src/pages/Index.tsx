@@ -11,6 +11,7 @@ const carouselItems = [
   {
     id: 1,
     image: "/lovable-uploads/827fb8c0-e5da-4520-a979-6fc054eefc6e.png",
+    heroTitle: "African Fashion Directory",
     title: "New Season Collections",
     subtitle: "Discover the latest pieces from Africa's most innovative designers",
     link: "/directory"
@@ -18,6 +19,7 @@ const carouselItems = [
   {
     id: 2,
     image: "/lovable-uploads/bb152c0b-6378-419b-a0e6-eafce44631b2.png",
+    heroTitle: "Bridal Elegance",
     title: "Modern African Bridal",
     subtitle: "Redefining tradition with contemporary elegance",
     link: "/directory/bridal"
@@ -25,6 +27,7 @@ const carouselItems = [
   {
     id: 3,
     image: "/lovable-uploads/de2841a8-58d1-4fd4-adfa-8c9aa09e9bb2.png",
+    heroTitle: "Fashion Forward",
     title: "Spotlight: Lagos Fashion Week",
     subtitle: "Meet the designers shaping the future of Nigerian fashion",
     link: "/directory/rtw"

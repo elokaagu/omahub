@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -11,6 +10,7 @@ interface CarouselItem {
   title: string;
   subtitle: string;
   link: string;
+  heroTitle?: string;
 }
 
 interface CarouselProps {
@@ -20,6 +20,7 @@ interface CarouselProps {
   aspectRatio?: "landscape" | "portrait" | "video" | "wide";
   className?: string;
   showControls?: boolean;
+  heroTitleClassName?: string;
 }
 
 export function Carousel({ 
@@ -28,7 +29,8 @@ export function Carousel({
   interval = 5000, 
   aspectRatio = "landscape", 
   className = "", 
-  showControls = true 
+  showControls = true,
+  heroTitleClassName = "" 
 }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
@@ -126,6 +128,14 @@ export function Carousel({
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="embla__content absolute inset-0 flex flex-col items-center justify-center text-center p-6 md:p-12">
                 <div className="max-w-4xl mx-auto">
+                  {item.heroTitle && (
+                    <h2 className={cn(
+                      "text-2xl md:text-3xl text-white/80 mb-2 font-suisse tracking-wide",
+                      heroTitleClassName
+                    )}>
+                      {item.heroTitle}
+                    </h2>
+                  )}
                   <h1 className="font-suisse text-4xl md:text-5xl lg:text-6xl text-white mb-4">{item.title}</h1>
                   <p className="text-white/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto">{item.subtitle}</p>
                   <Button asChild size="lg" className="bg-oma-plum hover:bg-oma-plum/90">
