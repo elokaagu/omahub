@@ -8,7 +8,7 @@ export default function Footer() {
           <img 
             src="/lovable-uploads/dc25584e-502c-48aa-bcd9-42a356c77c1c.png" 
             alt="Oma Hub" 
-            className="h-8 w-auto mb-4"
+            className="h-6 w-auto mb-4"
           />
           <p className="text-oma-cocoa mb-6 max-w-md">
             Spotlighting Africa's emerging designers through a carefully curated platform that celebrates craftsmanship, creativity, and culture.

@@ -96,7 +96,7 @@
   }
   
   .italic-serif {
-    @apply font-script italic;
+    @apply font-source italic;
   }
 }
 

@@ -14,7 +14,7 @@ export function CategoryCard({ title, image, href, className }: CategoryCardProp
     <Link
       to={href}
       className={cn(
-        "group relative overflow-hidden rounded-lg transition-all duration-300",
+        "group relative overflow-hidden rounded-2xl transition-all duration-300",
         className
       )}
     >
@@ -22,7 +22,7 @@ export function CategoryCard({ title, image, href, className }: CategoryCardProp
         <img
           src={image}
           alt={title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 rounded-2xl"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         <div className="absolute bottom-0 left-0 p-6">

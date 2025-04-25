@@ -29,15 +29,15 @@ export function BrandCard({
     <Link
       to={`/brand/${id}`}
       className={cn(
-        "group relative overflow-hidden rounded-lg bg-white transition-all duration-300 hover:scale-[1.02] shadow-sm hover:shadow-md",
+        "group relative overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:scale-[1.02] shadow-sm hover:shadow-md",
         className
       )}
     >
-      <div className="aspect-[3/4] w-full overflow-hidden bg-gray-200">
+      <div className="aspect-[3/4] w-full overflow-hidden bg-gray-200 rounded-2xl">
         <img
           src={image}
           alt={name}
-          className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+          className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105 rounded-2xl"
         />
       </div>
       <div className="p-4">
