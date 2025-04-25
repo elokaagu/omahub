@@ -42,17 +42,17 @@ const brandsData = {
       {
         id: 1,
         title: "Summer 2023 Collection",
-        image: "https://images.unsplash.com/photo-1506152983158-b4a74a01c721?auto=format&fit=crop&q=80&w=1200"
+        image: "/lovable-uploads/023ba098-0109-4738-9baf-1321bc3d2fe1.png"
       },
       {
         id: 2,
         title: "Adire Heritage Line",
-        image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&q=80&w=1200"
+        image: "/lovable-uploads/840e541a-b4c1-4e59-94af-89c8345e4d2d.png"
       },
       {
         id: 3,
         title: "Modern Classics",
-        image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200"
+        image: "/lovable-uploads/eca14925-7de8-4100-af5d-b158ff70e951.png"
       }
     ]
   },
@@ -88,18 +88,18 @@ const brandsData = {
     collections: [
       {
         id: 1,
-        title: "Heritage Handbags",
-        image: "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?auto=format&fit=crop&q=80&w=1200"
+        title: "Heritage Collection",
+        image: "/lovable-uploads/840e541a-b4c1-4e59-94af-89c8345e4d2d.png"
       },
       {
         id: 2,
-        title: "Statement Jewelry",
-        image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=1200"
+        title: "Modern Fusion",
+        image: "/lovable-uploads/023ba098-0109-4738-9baf-1321bc3d2fe1.png"
       },
       {
         id: 3,
-        title: "Modern Kente Accessories",
-        image: "https://images.unsplash.com/photo-1561689625-178c1627aea7?auto=format&fit=crop&q=80&w=1200"
+        title: "Seasonal Styles",
+        image: "/lovable-uploads/fd9289e6-2522-48c1-9fe4-42842504e746.png"
       }
     ]
   },
@@ -135,18 +135,18 @@ const brandsData = {
     collections: [
       {
         id: 1,
-        title: "Modern Bride",
-        image: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&q=80&w=1200"
+        title: "Bridal Collection",
+        image: "/lovable-uploads/53ab4ec9-fd54-4aa8-a292-70669af33185.png"
       },
       {
         id: 2,
-        title: "Heritage Collection",
-        image: "https://images.unsplash.com/photo-1544159595-a40c96d14cb2?auto=format&fit=crop&q=80&w=1200"
+        title: "Evening Wear",
+        image: "/lovable-uploads/fd9289e6-2522-48c1-9fe4-42842504e746.png"
       },
       {
         id: 3,
-        title: "Celebration Attire",
-        image: "https://images.unsplash.com/photo-1530639834082-05bafb67fbbe?auto=format&fit=crop&q=80&w=1200"
+        title: "Traditional Fusion",
+        image: "/lovable-uploads/eca14925-7de8-4100-af5d-b158ff70e951.png"
       }
     ]
   },
@@ -267,6 +267,11 @@ const BrandProfile = () => {
               aspectRatio="video"
               className="mb-4"
             />
+            <style>{`
+              .embla__slide img {
+                object-position: top center;
+              }
+            `}</style>
             <p className="text-sm text-oma-cocoa italic">
               Images showcase selected pieces from {brand.name}'s collections
             </p>
