@@ -8,7 +8,6 @@ import { CheckCircle, MapPin, Star } from "lucide-react";
 import { ContactDesignerModal } from "@/components/ui/contact-designer-modal";
 import { Link } from "react-router-dom";
 
-// Mock data for brand profiles
 const brandsData = {
   "adire-designs": {
     name: "Adire Designs",
@@ -153,8 +152,8 @@ const brandsData = {
   },
   "mbali-studio": {
     name: "Mbali Studio",
-    description: "Founded in 2018 by textile artist Thandi Mbali, this Johannesburg-based studio has quickly become known for its luxurious silk pieces featuring contemporary interpretations of traditional African patterns.",
-    longDescription: "Mbali Studio represents the creative vision of South African textile designer Thandi Mbali, whose background in fine arts and textile design informs the brand's distinctive aesthetic. The studio's signature approach involves hand-painting and digital printing on premium silk fabrics, creating pieces that function as both wearable art and sophisticated ready-to-wear.\n\nEach collection from Mbali Studio tells a specific cultural story, drawing inspiration from various African textile traditions—from Ndebele geometric patterns to the narrative symbolism found in West African Adinkra. These references are reimagined through a contemporary lens, resulting in pieces that feel both timeless and thoroughly modern.\n\nThe brand is committed to sustainable and ethical production methods, working with a small team of skilled artisans in Johannesburg who are fairly compensated for their craft. Limited production runs and made-to-order pieces help minimize waste while ensuring the exclusivity that has become synonymous with the Mbali name.",
+    description: "Founded by textile artist Thandi Mbali, this Johannesburg-based studio creates luxurious pieces featuring contemporary interpretations of traditional African patterns.",
+    longDescription: "Mbali Studio represents the creative vision of South African textile designer Thandi Mbali, whose background in fine arts and textile design informs the brand's distinctive aesthetic. Each collection tells a specific cultural story through pattern and color.\n\nThe brand is committed to sustainable and ethical production methods, working with a small team of skilled artisans in Johannesburg who are fairly compensated for their craft.",
     location: "Johannesburg, South Africa",
     priceRange: "R1,200 - R15,000",
     category: "Ready-to-Wear",
@@ -162,39 +161,202 @@ const brandsData = {
     reviews: [
       {
         author: "Nomusa Dlamini",
-        comment: "Mbali Studio's silk pieces are absolutely divine! The colors are so rich, and the fabric feels luxurious against my skin. I always feel like a work of art when I wear their designs.",
+        comment: "Mbali Studio's pieces are absolutely divine! The colors are so rich, and the fabric feels luxurious against my skin.",
         rating: 5,
         date: "2024-03-05"
-      },
-      {
-        author: "Sipho Ndlovu",
-        comment: "I appreciate Mbali Studio's commitment to sustainability and ethical production. Their clothing is not only beautiful but also made with a conscience.",
-        rating: 4,
-        date: "2024-02-10"
-      },
-      {
-        author: "Zanele Nkosi",
-        comment: "I bought a Mbali Studio scarf as a gift for my mother, and she absolutely loved it! The quality is exceptional, and the design is timeless.",
-        rating: 5,
-        date: "2024-01-15"
       }
     ],
     isVerified: true,
     collections: [
       {
         id: 1,
-        title: "Painted Silks",
-        image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=1200"
+        title: "Summer Collection",
+        image: "/lovable-uploads/39df6a45-ac17-439d-a75e-d5e290d3076a.png"
       },
       {
         id: 2,
-        title: "Geometric Collection",
-        image: "https://images.unsplash.com/photo-1550639525-c97d455acf70?auto=format&fit=crop&q=80&w=1200"
+        title: "Evening Wear",
+        image: "/lovable-uploads/67421e80-f8e4-4576-a738-f45b1a439c5e.png"
       },
       {
         id: 3,
-        title: "Heritage Prints",
-        image: "https://images.unsplash.com/photo-1551533446-e7224fd40cc8?auto=format&fit=crop&q=80&w=1200"
+        title: "Resort Collection",
+        image: "/lovable-uploads/882a0fa9-6672-4dec-97a7-b2caaddb0fa0.png"
+      }
+    ]
+  },
+  "beads-by-nneka": {
+    name: "Beads by Nneka",
+    description: "A luxury accessories brand specializing in handcrafted beaded jewelry and accessories that blend traditional African beadwork with contemporary design.",
+    longDescription: "Beads by Nneka celebrates the rich heritage of African beadwork while bringing a modern sensibility to each piece. Every creation is handcrafted using traditional techniques and premium materials.\n\nThe brand works directly with artisan communities across Nigeria, ensuring fair trade practices and supporting local craftsmanship.",
+    location: "Abuja, Nigeria",
+    priceRange: "₦15,000 - ₦250,000",
+    category: "Accessories",
+    rating: 4.8,
+    reviews: [
+      {
+        author: "Chioma Okonkwo",
+        comment: "The craftsmanship is exceptional. Each piece tells a story and the quality is outstanding.",
+        rating: 5,
+        date: "2024-03-15"
+      }
+    ],
+    isVerified: true,
+    collections: [
+      {
+        id: 1,
+        title: "Heritage Collection",
+        image: "/lovable-uploads/020cb90b-2fee-4db4-a7ee-538515580ef2.png"
+      },
+      {
+        id: 2,
+        title: "Modern Classics",
+        image: "/lovable-uploads/06da949c-c4cd-44da-a58a-8ca60675ec6f.png"
+      },
+      {
+        id: 3,
+        title: "Statement Pieces",
+        image: "/lovable-uploads/808be60f-e4ee-4c4c-9544-6f704576f710.png"
+      }
+    ]
+  },
+  "afrochic": {
+    name: "AfroChic",
+    description: "A contemporary fashion house known for its bold designs and innovative takes on traditional African aesthetics.",
+    longDescription: "AfroChic has established itself as a pioneer in contemporary African fashion, creating pieces that celebrate the continent's rich textile heritage while pushing the boundaries of modern design.\n\nThe brand is renowned for its innovative use of traditional fabrics and modern silhouettes, creating pieces that are both timeless and contemporary.",
+    location: "Dakar, Senegal",
+    priceRange: "CFA 25,000 - CFA 500,000",
+    category: "Ready-to-Wear",
+    rating: 4.7,
+    reviews: [
+      {
+        author: "Aisha Diallo",
+        comment: "AfroChic's designs are simply stunning. The way they blend traditional elements with modern style is perfect.",
+        rating: 5,
+        date: "2024-02-28"
+      }
+    ],
+    isVerified: false,
+    collections: [
+      {
+        id: 1,
+        title: "Summer '24",
+        image: "/lovable-uploads/6bb91631-9e7a-4200-be24-dd1b56cde590.png"
+      },
+      {
+        id: 2,
+        title: "Evening Collection",
+        image: "/lovable-uploads/1afe2e3f-334c-4c45-8626-a7feeda1b726.png"
+      },
+      {
+        id: 3,
+        title: "Resort Wear",
+        image: "/lovable-uploads/020cb90b-2fee-4db4-a7ee-538515580ef2.png"
+      }
+    ]
+  },
+  "ananse-weaving": {
+    name: "Ananse Weaving",
+    description: "A contemporary textile studio that specializes in handwoven fabrics and modern interpretations of traditional Ghanaian weaving patterns.",
+    longDescription: "Ananse Weaving honors the rich tradition of Ghanaian textile arts while bringing contemporary design sensibilities to each piece. The studio works with master weavers who create unique textiles using traditional techniques.\n\nEach piece is a celebration of craftsmanship and cultural heritage, designed to bring artisanal quality to modern wardrobes.",
+    location: "Kumasi, Ghana",
+    priceRange: "GH₵500 - GH₵5,000",
+    category: "Accessories",
+    rating: 4.9,
+    reviews: [
+      {
+        author: "Kwame Mensah",
+        comment: "The quality of their textiles is exceptional. Each piece feels like a work of art.",
+        rating: 5,
+        date: "2024-03-10"
+      }
+    ],
+    isVerified: true,
+    collections: [
+      {
+        id: 1,
+        title: "Heritage Collection",
+        image: "/lovable-uploads/67421e80-f8e4-4576-a738-f45b1a439c5e.png"
+      },
+      {
+        id: 2,
+        title: "Modern Patterns",
+        image: "/lovable-uploads/882a0fa9-6672-4dec-97a7-b2caaddb0fa0.png"
+      },
+      {
+        id: 3,
+        title: "Artisan Series",
+        image: "/lovable-uploads/39df6a45-ac17-439d-a75e-d5e290d3076a.png"
+      }
+    ]
+  },
+  "cairo-couture": {
+    name: "Cairo Couture",
+    description: "An esteemed tailoring house known for its impeccable craftsmanship and modern take on traditional Egyptian formal wear.",
+    longDescription: "Cairo Couture has established itself as a leading name in luxury tailoring, combining centuries-old Egyptian craftsmanship with contemporary design sensibilities.\n\nThe atelier specializes in both traditional and modern formal wear, creating pieces that honor Egyptian heritage while embracing current fashion trends.",
+    location: "Cairo, Egypt",
+    priceRange: "EGP 5,000 - EGP 50,000",
+    category: "Tailoring",
+    rating: 4.8,
+    reviews: [
+      {
+        author: "Nour Hassan",
+        comment: "The attention to detail and quality of tailoring is unmatched. True artisans of their craft.",
+        rating: 5,
+        date: "2024-02-15"
+      }
+    ],
+    isVerified: true,
+    collections: [
+      {
+        id: 1,
+        title: "Evening Wear",
+        image: "/lovable-uploads/6bb91631-9e7a-4200-be24-dd1b56cde590.png"
+      },
+      {
+        id: 2,
+        title: "Modern Collection",
+        image: "/lovable-uploads/1afe2e3f-334c-4c45-8626-a7feeda1b726.png"
+      },
+      {
+        id: 3,
+        title: "Heritage Line",
+        image: "/lovable-uploads/020cb90b-2fee-4db4-a7ee-538515580ef2.png"
+      }
+    ]
+  },
+  "marrakech-textiles": {
+    name: "Marrakech Textiles",
+    description: "A luxury textile house specializing in handwoven fabrics and contemporary interpretations of traditional Moroccan patterns.",
+    longDescription: "Marrakech Textiles bridges the gap between traditional Moroccan craftsmanship and contemporary design. Working with skilled artisans in the medina, they create unique textiles that honor centuries-old techniques while embracing modern aesthetics.\n\nEach piece is handcrafted using traditional looms and natural materials, ensuring both authenticity and sustainability.",
+    location: "Marrakech, Morocco",
+    priceRange: "MAD 1,000 - MAD 20,000",
+    category: "Accessories",
+    rating: 4.6,
+    reviews: [
+      {
+        author: "Amira Benali",
+        comment: "Their textiles are works of art. The quality and attention to detail is remarkable.",
+        rating: 5,
+        date: "2024-03-01"
+      }
+    ],
+    isVerified: false,
+    collections: [
+      {
+        id: 1,
+        title: "Atlas Collection",
+        image: "/lovable-uploads/808be60f-e4ee-4c4c-9544-6f704576f710.png"
+      },
+      {
+        id: 2,
+        title: "Modern Medina",
+        image: "/lovable-uploads/06da949c-c4cd-44da-a58a-8ca60675ec6f.png"
+      },
+      {
+        id: 3,
+        title: "Heritage Line",
+        image: "/lovable-uploads/020cb90b-2fee-4db4-a7ee-538515580ef2.png"
       }
     ]
   }
