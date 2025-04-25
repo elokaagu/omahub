@@ -39,7 +39,7 @@ const categories = [
   },
   {
     title: "Ready-to-Wear",
-    image: "https://images.unsplash.com/photo-1624454002053-876dd95c1fc1?auto=format&fit=crop&q=80&w=800",
+    image: "/lovable-uploads/4a7c7e86-6cde-4d07-a246-a5aa4cb6fa51.png",
     href: "/directory?category=rtw"
   },
   {
@@ -49,7 +49,7 @@ const categories = [
   },
   {
     title: "Accessories",
-    image: "https://images.unsplash.com/photo-1614938550528-eec6715f1746?auto=format&fit=crop&q=80&w=800",
+    image: "/lovable-uploads/25c3fe26-3fc4-43ef-83ac-6931a74468c0.png",
     href: "/directory?category=accessories"
   },
 ];
