@@ -59,7 +59,7 @@ const brandsData = {
     {
       id: "zora-atelier",
       name: "Zora Atelier",
-      image: "/lovable-uploads/4f01c882-4b82-47ba-abfc-ce5e9b778ad1.png",
+      image: "/lovable-uploads/53ab4ec9-fd54-4aa8-a292-70669af33185.png",
       category: "Bridal",
       location: "Nairobi",
       rating: 5.0,
@@ -68,7 +68,7 @@ const brandsData = {
     {
       id: "lagos-bridal",
       name: "Lagos Bridal House",
-      image: "/lovable-uploads/bb152c0b-6378-419b-a0e6-eafce44631b2.png",
+      image: "/lovable-uploads/fd9289e6-2522-48c1-9fe4-42842504e746.png",
       category: "Bridal",
       location: "Lagos",
       rating: 4.8,
@@ -77,19 +77,37 @@ const brandsData = {
     {
       id: "afrique-elegance",
       name: "Afrique Elegance",
-      image: "/lovable-uploads/57cc6a40-0f0d-4a7d-8786-41f15832ebfb.png",
+      image: "/lovable-uploads/eca14925-7de8-4100-af5d-b158ff70e951.png",
       category: "Bridal",
       location: "Accra",
       rating: 4.9,
       isVerified: true
     },
     {
-      id: "afrochic",
-      name: "AfroChic",
+      id: "casablanca-bridal",
+      name: "Casablanca Bridal",
+      image: "/lovable-uploads/023ba098-0109-4738-9baf-1321bc3d2fe1.png",
+      category: "Bridal",
+      location: "Casablanca",
+      rating: 4.7,
+      isVerified: true
+    },
+    {
+      id: "addis-bridal",
+      name: "Addis Bridal",
+      image: "/lovable-uploads/840e541a-b4c1-4e59-94af-89c8345e4d2d.png",
+      category: "Bridal",
+      location: "Addis Ababa",
+      rating: 4.8,
+      isVerified: true
+    },
+    {
+      id: "tunis-couture",
+      name: "Tunis Couture",
       image: "/lovable-uploads/5daa129b-ed11-4932-b7bd-aeb2b4e598f3.png",
       category: "Bridal",
-      location: "Dakar",
-      rating: 4.7,
+      location: "Tunis",
+      rating: 4.6,
       isVerified: false
     }
   ],
@@ -97,7 +115,7 @@ const brandsData = {
     {
       id: "adire-designs",
       name: "Adire Designs",
-      image: "/lovable-uploads/827fb8c0-e5da-4520-a979-6fc054eefc6e.png",
+      image: "/lovable-uploads/840e541a-b4c1-4e59-94af-89c8345e4d2d.png",
       category: "Ready-to-Wear",
       location: "Lagos",
       rating: 4.8,
@@ -106,7 +124,7 @@ const brandsData = {
     {
       id: "mbali-studio",
       name: "Mbali Studio",
-      image: "/lovable-uploads/de2841a8-58d1-4fd4-adfa-8c9aa09e9bb2.png",
+      image: "/lovable-uploads/023ba098-0109-4738-9baf-1321bc3d2fe1.png",
       category: "Ready-to-Wear",
       location: "Johannesburg",
       rating: 4.9,
@@ -115,7 +133,7 @@ const brandsData = {
     {
       id: "dakar-fashion",
       name: "Dakar Fashion House",
-      image: "/lovable-uploads/4f01c882-4b82-47ba-abfc-ce5e9b778ad1.png",
+      image: "/lovable-uploads/eca14925-7de8-4100-af5d-b158ff70e951.png",
       category: "Ready-to-Wear",
       location: "Dakar",
       rating: 4.7,
@@ -124,10 +142,28 @@ const brandsData = {
     {
       id: "nairobi-couture",
       name: "Nairobi Couture",
-      image: "/lovable-uploads/5daa129b-ed11-4932-b7bd-aeb2b4e598f3.png",
+      image: "/lovable-uploads/fd9289e6-2522-48c1-9fe4-42842504e746.png",
       category: "Ready-to-Wear",
       location: "Nairobi",
       rating: 4.6,
+      isVerified: true
+    },
+    {
+      id: "algiers-style",
+      name: "Algiers Style",
+      image: "/lovable-uploads/53ab4ec9-fd54-4aa8-a292-70669af33185.png",
+      category: "Ready-to-Wear",
+      location: "Algiers",
+      rating: 4.5,
+      isVerified: false
+    },
+    {
+      id: "accra-fashion",
+      name: "Accra Fashion",
+      image: "/lovable-uploads/5daa129b-ed11-4932-b7bd-aeb2b4e598f3.png",
+      category: "Ready-to-Wear",
+      location: "Accra",
+      rating: 4.8,
       isVerified: true
     }
   ],
@@ -135,7 +171,7 @@ const brandsData = {
     {
       id: "cairo-couture",
       name: "Cairo Couture",
-      image: "/lovable-uploads/99ca757a-bed8-422e-b155-0b9d365b58e0.png",
+      image: "/lovable-uploads/eca14925-7de8-4100-af5d-b158ff70e951.png",
       category: "Tailoring",
       location: "Cairo",
       rating: 4.9,
@@ -144,7 +180,7 @@ const brandsData = {
     {
       id: "abuja-tailors",
       name: "Abuja Master Tailors",
-      image: "/lovable-uploads/de2841a8-58d1-4fd4-adfa-8c9aa09e9bb2.png",
+      image: "/lovable-uploads/023ba098-0109-4738-9baf-1321bc3d2fe1.png",
       category: "Tailoring",
       location: "Abuja",
       rating: 4.8,
@@ -153,7 +189,7 @@ const brandsData = {
     {
       id: "casablanca-style",
       name: "Casablanca Style",
-      image: "/lovable-uploads/4f01c882-4b82-47ba-abfc-ce5e9b778ad1.png",
+      image: "/lovable-uploads/840e541a-b4c1-4e59-94af-89c8345e4d2d.png",
       category: "Tailoring",
       location: "Casablanca",
       rating: 4.7,
@@ -162,18 +198,36 @@ const brandsData = {
     {
       id: "addis-tailoring",
       name: "Addis Fine Tailoring",
-      image: "/lovable-uploads/5daa129b-ed11-4932-b7bd-aeb2b4e598f3.png",
+      image: "/lovable-uploads/fd9289e6-2522-48c1-9fe4-42842504e746.png",
       category: "Tailoring",
       location: "Addis Ababa",
       rating: 4.8,
       isVerified: true
+    },
+    {
+      id: "tunis-tailors",
+      name: "Tunis Master Tailors",
+      image: "/lovable-uploads/53ab4ec9-fd54-4aa8-a292-70669af33185.png",
+      category: "Tailoring",
+      location: "Tunis",
+      rating: 4.6,
+      isVerified: true
+    },
+    {
+      id: "khartoum-tailoring",
+      name: "Khartoum Tailoring",
+      image: "/lovable-uploads/5daa129b-ed11-4932-b7bd-aeb2b4e598f3.png",
+      category: "Tailoring",
+      location: "Khartoum",
+      rating: 4.5,
+      isVerified: false
     }
   ],
   accessoryBrands: [
     {
       id: "kente-collective",
       name: "Kente Collective",
-      image: "/lovable-uploads/827fb8c0-e5da-4520-a979-6fc054eefc6e.png",
+      image: "/lovable-uploads/53ab4ec9-fd54-4aa8-a292-70669af33185.png",
       category: "Accessories",
       location: "Accra",
       rating: 4.9,
@@ -182,7 +236,7 @@ const brandsData = {
     {
       id: "sahara-jewels",
       name: "Sahara Jewels",
-      image: "/lovable-uploads/bb152c0b-6378-419b-a0e6-eafce44631b2.png",
+      image: "/lovable-uploads/eca14925-7de8-4100-af5d-b158ff70e951.png",
       category: "Accessories",
       location: "Marrakech",
       rating: 4.8,
@@ -191,7 +245,7 @@ const brandsData = {
     {
       id: "lagos-leather",
       name: "Lagos Leather",
-      image: "/lovable-uploads/4f01c882-4b82-47ba-abfc-ce5e9b778ad1.png",
+      image: "/lovable-uploads/023ba098-0109-4738-9baf-1321bc3d2fe1.png",
       category: "Accessories",
       location: "Lagos",
       rating: 4.7,
@@ -200,10 +254,28 @@ const brandsData = {
     {
       id: "nubian-accessories",
       name: "Nubian Accessories",
-      image: "/lovable-uploads/5daa129b-ed11-4932-b7bd-aeb2b4e598f3.png",
+      image: "/lovable-uploads/840e541a-b4c1-4e59-94af-89c8345e4d2d.png",
       category: "Accessories",
       location: "Khartoum",
       rating: 4.6,
+      isVerified: true
+    },
+    {
+      id: "atlas-jewelry",
+      name: "Atlas Jewelry",
+      image: "/lovable-uploads/fd9289e6-2522-48c1-9fe4-42842504e746.png",
+      category: "Accessories",
+      location: "Casablanca",
+      rating: 4.5,
+      isVerified: false
+    },
+    {
+      id: "swahili-crafts",
+      name: "Swahili Crafts",
+      image: "/lovable-uploads/5daa129b-ed11-4932-b7bd-aeb2b4e598f3.png",
+      category: "Accessories",
+      location: "Zanzibar",
+      rating: 4.8,
       isVerified: true
     }
   ]

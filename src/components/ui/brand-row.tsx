@@ -1,7 +1,9 @@
+
 import { ChevronLeft as ArrowLeft, ChevronRight as ArrowRight } from "lucide-react";
 import { Button } from "./button";
 import { BrandCard } from "./brand-card";
 import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 interface Brand {
   id: string;
@@ -30,9 +32,16 @@ export function BrandRow({ title, brands }: BrandRowProps) {
     setScrollPosition(container.scrollLeft + scrollAmount);
   };
 
+  const categoryParam = title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
   return (
     <div className="relative py-8">
-      <h2 className="heading-sm mb-6">{title}</h2>
+      <Link 
+        to={`/directory?category=${categoryParam}`}
+        className="inline-block hover:opacity-80 transition-opacity"
+      >
+        <h2 className="heading-sm mb-6 hover:text-oma-plum transition-colors">{title}</h2>
+      </Link>
       
       <div className="group relative">
         <div
