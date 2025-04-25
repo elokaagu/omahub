@@ -1,7 +1,8 @@
+
 import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useEmblaCarousel } from 'embla-carousel/react'
+import useEmblaCarousel from 'embla-carousel-react';
 import { Link } from "react-router-dom";
 
 interface CarouselItem {
@@ -111,14 +112,16 @@ export function Carousel({ items, autoplay = false, interval = 5000, aspectRatio
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="embla__content absolute bottom-0 left-0 p-6 md:p-12 w-full">
-                <h1 className="font-suisse text-4xl md:text-5xl lg:text-6xl text-white mb-4">{item.title}</h1>
-                <p className="text-white/90 text-lg md:text-xl mb-6 max-w-2xl">{item.subtitle}</p>
-                <Button asChild size="lg" className="bg-oma-plum hover:bg-oma-plum/90">
-                  <Link to={item.link}>
-                    Explore Directory
-                  </Link>
-                </Button>
+              <div className="embla__content absolute inset-0 flex flex-col items-center justify-center text-center p-6 md:p-12">
+                <div className="max-w-4xl mx-auto">
+                  <h1 className="font-suisse text-4xl md:text-5xl lg:text-6xl text-white mb-4">{item.title}</h1>
+                  <p className="text-white/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto">{item.subtitle}</p>
+                  <Button asChild size="lg" className="bg-oma-plum hover:bg-oma-plum/90">
+                    <Link to="/directory">
+                      Explore Directory
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           ))}
