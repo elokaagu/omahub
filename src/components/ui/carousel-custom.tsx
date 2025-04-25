@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -16,7 +17,7 @@ interface CarouselProps {
   items: CarouselItem[];
   autoplay?: boolean;
   interval?: number;
-  aspectRatio?: "landscape" | "portrait" | "video";
+  aspectRatio?: "landscape" | "portrait" | "video" | "wide";
   className?: string;
   showControls?: boolean;
 }
@@ -81,7 +82,8 @@ export function Carousel({
     <div className={cn("relative overflow-hidden", 
       aspectRatio === "landscape" ? "aspect-video" : 
       aspectRatio === "portrait" ? "aspect-[3/4]" : 
-      "aspect-[2/1]", 
+      aspectRatio === "wide" ? "aspect-[2/1]" :
+      "aspect-video", 
       className)}>
       {showControls && (
         <>
@@ -127,7 +129,7 @@ export function Carousel({
                   <h1 className="font-suisse text-4xl md:text-5xl lg:text-6xl text-white mb-4">{item.title}</h1>
                   <p className="text-white/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto">{item.subtitle}</p>
                   <Button asChild size="lg" className="bg-oma-plum hover:bg-oma-plum/90">
-                    <Link to="/directory">
+                    <Link to={item.link}>
                       Explore Directory
                     </Link>
                   </Button>
