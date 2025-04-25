@@ -7,7 +7,6 @@ import { NewsletterForm } from "@/components/ui/newsletter-form";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-// Mock data for demonstration
 const carouselItems = [
   {
     id: 1,
@@ -55,7 +54,7 @@ const categories = [
   },
 ];
 
-const featuredBrands = [
+const brandsData = [
   {
     id: "adire-designs",
     name: "Adire Designs",
@@ -78,8 +77,42 @@ const featuredBrands = [
     image: "https://images.unsplash.com/photo-1589571891411-069af4905b77?auto=format&fit=crop&q=80&w=800",
     category: "Bridal",
     location: "Nairobi",
+    isVerified: true,
+    reviews: [
+      { id: 1, name: "Amara O.", text: "Absolutely stunning design, exceeded all my expectations!" },
+      { id: 2, name: "Chidi E.", text: "The craftsmanship is impeccable. Highly recommend!" },
+      { id: 3, name: "Fatima K.", text: "A perfect blend of tradition and modern elegance." }
+    ]
+  },
+  {
+    id: "mbali-studio",
+    name: "Mbali Studio",
+    image: "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?auto=format&fit=crop&q=80&w=800",
+    category: "Ready-to-Wear",
+    location: "Johannesburg",
     isVerified: true
   },
+  {
+    id: "cairo-couture",
+    name: "Cairo Couture",
+    image: "https://images.unsplash.com/photo-1605905337183-cc1b9e010bd0?auto=format&fit=crop&q=80&w=800",
+    category: "Tailoring",
+    location: "Cairo",
+    isVerified: true
+  },
+  {
+    id: "afrochic",
+    name: "AfroChic",
+    image: "https://images.unsplash.com/photo-1593795899768-947c4929449d?auto=format&fit=crop&q=80&w=800",
+    category: "Bridal",
+    location: "Dakar",
+    isVerified: false,
+    reviews: [
+      { id: 1, name: "Mariama S.", text: "The dress made me feel like royalty!" },
+      { id: 2, name: "Aminata D.", text: "Beautiful design with cultural significance." },
+      { id: 3, name: "Nadia B.", text: "Exceptional quality and attention to detail." }
+    ]
+  }
 ];
 
 const editorsPickItems = [
@@ -93,9 +126,13 @@ const editorsPickItems = [
 ];
 
 const Index = () => {
+  const bridalBrands = brandsData.filter(brand => brand.category === "Bridal");
+  const rtwBrands = brandsData.filter(brand => brand.category === "Ready-to-Wear");
+  const tailoringBrands = brandsData.filter(brand => brand.category === "Tailoring");
+  const accessoryBrands = brandsData.filter(brand => brand.category === "Accessories");
+
   return (
     <Layout>
-      {/* Hero Section with Carousel */}
       <section className="w-full">
         <Carousel 
           items={carouselItems} 
@@ -105,7 +142,6 @@ const Index = () => {
         />
       </section>
 
-      {/* Categories Section */}
       <section className="py-16 px-6 max-w-7xl mx-auto">
         <SectionHeader 
           title="Discover by Category"
@@ -124,7 +160,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Editor's Pick Section */}
       <section className="py-16 bg-oma-beige">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeader 
@@ -160,20 +195,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Brands Section */}
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
-          <BrandRow title="Featured Brands" brands={featuredBrands} />
-          
-          <div className="mt-8 text-center">
-            <Button asChild variant="outline" className="hover:bg-oma-beige">
-              <Link to="/directory">View All Brands</Link>
-            </Button>
-          </div>
+          <BrandRow title="African Bridal Designers" brands={bridalBrands} />
+          <BrandRow title="Ready-to-Wear Collections" brands={rtwBrands} />
+          <BrandRow title="Expert Tailors" brands={tailoringBrands} />
+          <BrandRow title="Accessories & More" brands={accessoryBrands} />
         </div>
       </section>
 
-      {/* Newsletter Section */}
       <section className="py-16 px-6 bg-gradient-to-r from-oma-gold/20 to-oma-cocoa/20">
         <div className="max-w-3xl mx-auto text-center">
           <SectionHeader 
