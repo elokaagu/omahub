@@ -305,6 +305,7 @@ const Index = () => {
           autoplay={true} 
           interval={6000}
           aspectRatio="wide"
+          className="[&_.embla__content_h1]:font-canela [&_.embla__content_h1]:text-5xl [&_.embla__content_h1]:md:text-6xl"
         />
       </section>
 
@@ -313,6 +314,7 @@ const Index = () => {
           title="Discover by Category"
           subtitle="Explore the finest African designers across different specialties"
           italic={true}
+          titleClassName="text-3xl md:text-4xl"
         />
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -336,7 +338,7 @@ const Index = () => {
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
+            <div className="rounded-2xl overflow-hidden">
               <Carousel 
                 items={editorsPickItems}
                 showControls={false}

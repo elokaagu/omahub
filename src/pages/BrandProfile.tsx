@@ -6,6 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, MapPin, Star } from "lucide-react";
 import { ContactDesignerModal } from "@/components/ui/contact-designer-modal";
+import { Link } from "react-router-dom";
 
 // Mock data for brand profiles
 const brandsData = {
@@ -201,8 +202,6 @@ const brandsData = {
 
 const BrandProfile = () => {
   const { id } = useParams<{ id: string }>();
-  
-  // Get brand data using the ID from URL params
   const brand = id ? brandsData[id as keyof typeof brandsData] : null;
   
   if (!brand) {
@@ -212,21 +211,12 @@ const BrandProfile = () => {
           <h1 className="heading-lg mb-4">Brand Not Found</h1>
           <p className="text-oma-cocoa mb-8">The designer you're looking for doesn't exist or may have been removed.</p>
           <Button asChild className="bg-oma-plum hover:bg-oma-plum/90">
-            <a href="/directory">Back to Directory</a>
+            <Link to="/directory">Back to Directory</Link>
           </Button>
         </div>
       </Layout>
     );
   }
-  
-  // Convert collections to the format needed for the Carousel component
-  const carouselItems = brand.collections.map((collection) => ({
-    id: collection.id,
-    image: collection.image,
-    title: collection.title,
-    subtitle: brand.name,
-    link: "#"
-  }));
 
   return (
     <Layout>
@@ -259,22 +249,24 @@ const BrandProfile = () => {
             <p className="text-lg max-w-3xl">{brand.description}</p>
           </div>
 
-          {/* Collection Showcase */}
+          {/* Collection Grid */}
           <div className="my-12">
             <h2 className="heading-sm mb-6">Collections</h2>
-            <Carousel 
-              items={carouselItems} 
-              aspectRatio="video"
-              className="mb-4"
-            />
-            <style>{`
-              .embla__slide img {
-                object-position: top center;
-              }
-            `}</style>
-            <p className="text-sm text-oma-cocoa italic">
-              Images showcase selected pieces from {brand.name}'s collections
-            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {brand.collections.map((collection) => (
+                <div key={collection.id} className="aspect-[4/5] relative overflow-hidden rounded-2xl">
+                  <img
+                    src={collection.image}
+                    alt={collection.title}
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-6">
+                    <h3 className="text-white text-xl font-source">{collection.title}</h3>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">

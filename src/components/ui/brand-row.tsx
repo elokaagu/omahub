@@ -32,12 +32,10 @@ export function BrandRow({ title, brands }: BrandRowProps) {
     setScrollPosition(container.scrollLeft + scrollAmount);
   };
 
-  const categoryParam = title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-
   return (
     <div className="relative py-8">
       <Link 
-        to={`/directory?category=${categoryParam}`}
+        to={`/directory?category=${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
         className="inline-block hover:opacity-80 transition-opacity"
       >
         <h2 className="heading-sm mb-6 hover:text-oma-plum transition-colors">{title}</h2>
@@ -49,9 +47,13 @@ export function BrandRow({ title, brands }: BrandRowProps) {
           className="flex space-x-6 overflow-x-scroll scrollbar-hide snap-x snap-mandatory"
         >
           {brands.map((brand) => (
-            <div key={brand.id} className="w-[300px] flex-none snap-start">
+            <Link 
+              key={brand.id}
+              to={`/brand/${brand.id}`}
+              className="w-[300px] flex-none snap-start"
+            >
               <BrandCard {...brand} />
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -75,4 +77,4 @@ export function BrandRow({ title, brands }: BrandRowProps) {
       </div>
     </div>
   );
-}
+};
