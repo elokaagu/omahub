@@ -3,7 +3,6 @@ import { Carousel } from "@/components/ui/carousel-custom";
 import { SectionHeader } from "@/components/ui/section-header";
 import { CategoryCard } from "@/components/ui/category-card";
 import { BrandRow } from "@/components/ui/brand-row";
-import { NewsletterForm } from "@/components/ui/newsletter-form";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -529,7 +528,6 @@ const Index = () => {
                 </ul>
               </div>
             </div>
-            <NewsletterForm className="mt-12" location="homepage" />
           </div>
         </div>
       </section>
