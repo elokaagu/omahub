@@ -1,91 +1,127 @@
+
 import { Link } from "react-router-dom";
+import { Instagram, Twitter, Linkedin } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 export default function Footer() {
   return (
-    <footer className="bg-oma-beige border-t border-oma-gold/20">
-      <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
-        <div className="md:w-1/3">
-          <img 
-            src="/lovable-uploads/dc25584e-502c-48aa-bcd9-42a356c77c1c.png" 
-            alt="Oma Hub" 
-            className="h-6 w-auto mb-4"
-          />
-          <p className="text-oma-cocoa mb-6 max-w-md">
-            Spotlighting Africa's emerging designers through a carefully curated platform that celebrates craftsmanship, creativity, and culture.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 md:w-2/3">
-          <div>
-            <h3 className="text-sm font-semibold leading-6 text-oma-black mb-6">Navigate</h3>
-            <ul className="space-y-4">
+    <footer className="bg-oma-beige">
+      <div className="mx-auto max-w-7xl px-6 py-12 md:px-8">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          {/* Column 1: Branding */}
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
+            <img 
+              src="/lovable-uploads/dc25584e-502c-48aa-bcd9-42a356c77c1c.png" 
+              alt="Oma Hub" 
+              className="h-6 w-auto mb-4"
+            />
+            <p className="text-oma-cocoa text-sm leading-relaxed max-w-md">
+              A curated platform spotlighting Africa's emerging designers through craftsmanship, creativity, and culture.
+            </p>
+          </div>
+          
+          {/* Column 2: Navigate */}
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-xs font-medium uppercase tracking-wider text-oma-black mb-4">Navigate</h3>
+            <ul className="flex flex-col items-center space-y-3 md:items-start">
               <li>
-                <Link to="/" className="text-oma-cocoa hover:text-oma-plum expand-underline">
+                <Link to="/" className="text-sm text-oma-cocoa hover:text-oma-plum expand-underline">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-oma-cocoa hover:text-oma-plum expand-underline">
-                  About
+                <Link to="/about" className="text-sm text-oma-cocoa hover:text-oma-plum expand-underline">
+                  Our Story
                 </Link>
               </li>
               <li>
-                <Link to="/directory" className="text-oma-cocoa hover:text-oma-plum expand-underline">
-                  Directory
+                <Link to="/directory" className="text-sm text-oma-cocoa hover:text-oma-plum expand-underline">
+                  Explore Designers
+                </Link>
+              </li>
+              <li>
+                <Link to="/how-it-works" className="text-sm text-oma-cocoa hover:text-oma-plum expand-underline">
+                  How It Works
                 </Link>
               </li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-sm font-semibold leading-6 text-oma-black mb-6">Resources</h3>
-            <ul className="space-y-4">
+
+          {/* Column 3: Resources */}
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-xs font-medium uppercase tracking-wider text-oma-black mb-4">Resources</h3>
+            <ul className="flex flex-col items-center space-y-3 md:items-start">
               <li>
-                <Link to="/join" className="text-oma-cocoa hover:text-oma-plum expand-underline">
+                <Link to="/join" className="text-sm text-oma-cocoa hover:text-oma-plum expand-underline">
                   Join the Hub
                 </Link>
               </li>
               <li>
-                <Link to="/privacy-policy" className="text-oma-cocoa hover:text-oma-plum expand-underline">
-                  Privacy Policy
+                <Link to="/terms-of-service" className="text-sm text-oma-cocoa hover:text-oma-plum expand-underline">
+                  Terms & Conditions
                 </Link>
               </li>
               <li>
-                <Link to="/terms-of-service" className="text-oma-cocoa hover:text-oma-plum expand-underline">
-                  Terms of Service
+                <Link to="/privacy-policy" className="text-sm text-oma-cocoa hover:text-oma-plum expand-underline">
+                  Privacy Policy
                 </Link>
               </li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-sm font-semibold leading-6 text-oma-black mb-6">Connect</h3>
-            <ul className="space-y-4">
+
+          {/* Column 4: Connect */}
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-xs font-medium uppercase tracking-wider text-oma-black mb-4">Connect</h3>
+            <ul className="flex flex-col items-center space-y-3 md:items-start">
               <li>
-                <a href="#" className="text-oma-cocoa hover:text-oma-plum expand-underline">
-                  Instagram
+                <a href="https://instagram.com" 
+                   className="text-sm text-oma-cocoa hover:text-oma-plum flex items-center gap-2 group">
+                  <Instagram className="h-4 w-4 transition group-hover:text-oma-plum" />
+                  <span className="expand-underline">@omahub</span>
                 </a>
               </li>
               <li>
-                <a href="#" className="text-oma-cocoa hover:text-oma-plum expand-underline">
-                  Twitter
+                <a href="https://twitter.com" 
+                   className="text-sm text-oma-cocoa hover:text-oma-plum flex items-center gap-2 group">
+                  <Twitter className="h-4 w-4 transition group-hover:text-oma-plum" />
+                  <span className="expand-underline">Twitter</span>
                 </a>
               </li>
               <li>
-                <a href="#" className="text-oma-cocoa hover:text-oma-plum expand-underline">
-                  LinkedIn
+                <a href="https://linkedin.com" 
+                   className="text-sm text-oma-cocoa hover:text-oma-plum flex items-center gap-2 group">
+                  <Linkedin className="h-4 w-4 transition group-hover:text-oma-plum" />
+                  <span className="expand-underline">LinkedIn</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:info@omahub.com" className="text-oma-cocoa hover:text-oma-plum expand-underline">
+                <a href="mailto:contact@omahub.com" 
+                   className="text-sm text-oma-cocoa hover:text-oma-plum expand-underline">
                   Contact Us
                 </a>
               </li>
             </ul>
           </div>
         </div>
-      </div>
-      <div className="mx-auto max-w-7xl border-t border-oma-gold/20 px-6 py-6 md:flex md:items-center md:justify-between lg:px-8">
-        <div className="mt-8 md:order-1 md:mt-0">
-          <p className="text-center text-xs leading-5 text-oma-cocoa">
+        
+        {/* CTA Block */}
+        <div className="mt-12 py-6 flex flex-col sm:flex-row items-center justify-between border-t border-b border-oma-gold/20">
+          <p className="text-sm text-oma-plum font-medium mb-3 sm:mb-0">
+            Want early access to new collections and drops?
+          </p>
+          <Link 
+            to="/join" 
+            className="text-sm font-medium text-oma-plum flex items-center gap-1 group"
+          >
+            <span className="expand-underline">Join the newsletter</span>
+            <span className="transition-transform group-hover:translate-x-0.5">→</span>
+          </Link>
+        </div>
+        
+        {/* Copyright */}
+        <div className="mt-8 text-center sm:text-left">
+          <p className="text-xs leading-5 text-oma-cocoa/80">
             &copy; {new Date().getFullYear()} Oma Hub. All rights reserved.
           </p>
         </div>
