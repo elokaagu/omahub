@@ -529,7 +529,7 @@ const Index = () => {
                 </ul>
               </div>
             </div>
-            <NewsletterForm />
+            <NewsletterForm className="mt-12" location="homepage" />
           </div>
         </div>
       </section>
