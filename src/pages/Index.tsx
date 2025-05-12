@@ -6,7 +6,6 @@ import { BrandRow } from "@/components/ui/brand-row";
 import { NewsletterForm } from "@/components/ui/newsletter-form";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { BrandCard } from "@/components/ui/brand-card";
 
 const carouselItems = [
   {
@@ -439,20 +438,7 @@ const Index = () => {
             subtitleClassName="text-oma-cocoa/80 italic"
           />
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            {bridalBrands.map((brand) => (
-              <BrandCard 
-                key={brand.id}
-                id={brand.id}
-                name={brand.name}
-                image={brand.image}
-                category={brand.category}
-                location={brand.location}
-                rating={brand.rating}
-                isVerified={brand.isVerified}
-              />
-            ))}
-          </div>
+          <BrandRow title="African Bridal Designers" brands={bridalBrands} />
         </div>
       </section>
       
@@ -465,20 +451,7 @@ const Index = () => {
             italic={true}
           />
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            {rtwBrands.map((brand) => (
-              <BrandCard 
-                key={brand.id}
-                id={brand.id}
-                name={brand.name}
-                image={brand.image}
-                category={brand.category}
-                location={brand.location}
-                rating={brand.rating}
-                isVerified={brand.isVerified}
-              />
-            ))}
-          </div>
+          <BrandRow title="Ready-to-Wear Collections" brands={rtwBrands} />
         </div>
       </section>
       
@@ -491,20 +464,7 @@ const Index = () => {
             italic={true}
           />
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            {tailoringBrands.map((brand) => (
-              <BrandCard 
-                key={brand.id}
-                id={brand.id}
-                name={brand.name}
-                image={brand.image}
-                category={brand.category}
-                location={brand.location}
-                rating={brand.rating}
-                isVerified={brand.isVerified}
-              />
-            ))}
-          </div>
+          <BrandRow title="Expert Tailors" brands={tailoringBrands} />
         </div>
       </section>
       
@@ -517,20 +477,7 @@ const Index = () => {
             italic={true}
           />
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-            {accessoryBrands.map((brand) => (
-              <BrandCard 
-                key={brand.id}
-                id={brand.id}
-                name={brand.name}
-                image={brand.image}
-                category={brand.category}
-                location={brand.location}
-                rating={brand.rating}
-                isVerified={brand.isVerified}
-              />
-            ))}
-          </div>
+          <BrandRow title="Accessories & More" brands={accessoryBrands} />
         </div>
       </section>
 

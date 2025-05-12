@@ -44,12 +44,7 @@ export function BrandCard({
         <div className="flex items-center justify-between">
           <h3 className="font-semibold text-lg">{name}</h3>
           {isVerified && (
-            <div className="relative group cursor-help">
-              <CheckCircle className="h-4 w-4 text-oma-gold" />
-              <span className="absolute -top-10 right-0 bg-white px-2 py-1 text-xs rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
-                Oma Verified Designer
-              </span>
-            </div>
+            <CheckCircle className="h-4 w-4 text-oma-gold" />
           )}
         </div>
         <div className="mt-2 flex items-center gap-2">

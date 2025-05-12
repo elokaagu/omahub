@@ -3,7 +3,6 @@ import { ChevronLeft as ArrowLeft, ChevronRight as ArrowRight } from "lucide-rea
 import { Button } from "./button";
 import { BrandCard } from "./brand-card";
 import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
 
 interface Brand {
   id: string;
@@ -11,6 +10,7 @@ interface Brand {
   image: string;
   category: string;
   location?: string;
+  rating?: number;
   isVerified?: boolean;
 }
 
@@ -34,12 +34,9 @@ export function BrandRow({ title, brands }: BrandRowProps) {
 
   return (
     <div className="relative py-8">
-      <Link 
-        to={`/directory?category=${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-        className="inline-block hover:opacity-80 transition-opacity"
-      >
+      <a href={`/directory?category=${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`} className="inline-block hover:opacity-80 transition-opacity">
         <h2 className="heading-sm mb-6 hover:text-oma-plum transition-colors">{title}</h2>
-      </Link>
+      </a>
       
       <div className="group relative">
         <div
@@ -47,13 +44,9 @@ export function BrandRow({ title, brands }: BrandRowProps) {
           className="flex space-x-6 overflow-x-scroll scrollbar-hide snap-x snap-mandatory"
         >
           {brands.map((brand) => (
-            <Link 
-              key={brand.id}
-              to={`/brand/${brand.id}`}
-              className="w-[300px] flex-none snap-start"
-            >
+            <div key={brand.id} className="w-[300px] flex-none snap-start">
               <BrandCard {...brand} />
-            </Link>
+            </div>
           ))}
         </div>
 
@@ -77,4 +70,4 @@ export function BrandRow({ title, brands }: BrandRowProps) {
       </div>
     </div>
   );
-};
+}
