@@ -45,6 +45,11 @@ export default function Footer() {
                   How It Works
                 </Link>
               </li>
+              <li>
+                <Link to="/contact" className="text-sm text-oma-cocoa hover:text-oma-plum expand-underline">
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -96,10 +101,10 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:contact@omahub.com" 
+                <Link to="/contact"
                    className="text-sm text-oma-cocoa hover:text-oma-plum expand-underline">
                   Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
