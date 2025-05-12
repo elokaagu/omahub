@@ -529,7 +529,7 @@ const Index = () => {
                 </ul>
               </div>
             </div>
-            <NewsletterForm className="max-w-md mx-auto" />
+            <NewsletterForm />
           </div>
         </div>
       </section>
