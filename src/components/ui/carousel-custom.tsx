@@ -1,163 +1,162 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { Button } from "@/components/ui/button";
+import React, { useState, useEffect, useRef } from "react";
+import { Button } from "./button";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import useEmblaCarousel from 'embla-carousel-react';
-import { Link } from "react-router-dom";
-
-interface CarouselItem {
-  id: number;
-  image: string;
-  title: string;
-  subtitle: string;
-  link: string;
-  heroTitle?: string;
-}
 
 interface CarouselProps {
-  items: CarouselItem[];
+  items: {
+    id: number;
+    image: string;
+    title: string;
+    subtitle?: string;
+    link?: string;
+  }[];
   autoplay?: boolean;
   interval?: number;
-  aspectRatio?: "landscape" | "portrait" | "video" | "wide";
   className?: string;
+  imageClassName?: string;
   showControls?: boolean;
-  heroTitleClassName?: string;
+  showIndicators?: boolean;
+  aspectRatio?: "video" | "square" | "portrait" | "wide" | "auto";
+  overlay?: boolean;
 }
 
-export function Carousel({ 
-  items, 
-  autoplay = false, 
-  interval = 5000, 
-  aspectRatio = "landscape", 
-  className = "", 
+export function Carousel({
+  items,
+  autoplay = false,
+  interval = 5000,
+  className,
+  imageClassName,
   showControls = true,
-  heroTitleClassName = "" 
+  showIndicators = true,
+  aspectRatio = "wide",
+  overlay = true,
 }: CarouselProps) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
-  const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
-  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const timeoutRef = useRef<number | null>(null);
 
-  const scrollTo = useCallback(
-    (index: number) => {
-      emblaApi?.scrollTo(index)
-    },
-    [emblaApi]
-  )
+  const aspectRatioClasses = {
+    video: "aspect-video",
+    square: "aspect-square",
+    portrait: "aspect-[3/4]",
+    wide: "aspect-[16/9]",
+    auto: "aspect-auto",
+  };
 
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return
-    setSelectedIndex(emblaApi.selectedScrollSnap())
-  }, [emblaApi, setSelectedIndex])
-
-  useEffect(() => {
-    if (!emblaApi) return
-    onSelect()
-    setScrollSnaps(emblaApi.scrollSnapList())
-    emblaApi.on('select', onSelect)
-  }, [emblaApi, setScrollSnaps, onSelect])
+  const resetTimeout = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  };
 
   useEffect(() => {
-    if (!autoplay || !emblaApi) return;
-
-    let timer: NodeJS.Timeout;
-
-    const startAutoplay = () => {
-      timer = setTimeout(() => {
-        if (!emblaApi) return;
-        const nextSlide = (emblaApi.selectedScrollSnap() + 1) % emblaApi.scrollSnapList().length;
-        scrollTo(nextSlide);
+    resetTimeout();
+    
+    if (autoplay) {
+      timeoutRef.current = window.setTimeout(() => {
+        setCurrentIndex((prevIndex) =>
+          prevIndex === items.length - 1 ? 0 : prevIndex + 1
+        );
       }, interval);
-    };
-
-    startAutoplay();
-
-    emblaApi.on('select', () => {
-      clearTimeout(timer);
-      startAutoplay();
-    });
+    }
 
     return () => {
-      clearTimeout(timer);
+      resetTimeout();
     };
-  }, [emblaApi, autoplay, interval, scrollTo]);
+  }, [currentIndex, autoplay, interval, items.length]);
+
+  const nextSlide = () => {
+    resetTimeout();
+    setCurrentIndex((prevIndex) =>
+      prevIndex === items.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevSlide = () => {
+    resetTimeout();
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? items.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToSlide = (index: number) => {
+    resetTimeout();
+    setCurrentIndex(index);
+  };
 
   return (
-    <div className={cn("relative overflow-hidden", 
-      aspectRatio === "landscape" ? "aspect-video" : 
-      aspectRatio === "portrait" ? "aspect-[3/4]" : 
-      aspectRatio === "wide" ? "aspect-[2/1]" :
-      "aspect-video", 
-      className)}>
+    <div className={cn("relative w-full overflow-hidden", className)}>
+      <div
+        className={cn(
+          "relative w-full overflow-hidden", 
+          aspectRatioClasses[aspectRatio]
+        )}
+      >
+        {items.map((item, index) => (
+          <div
+            key={item.id}
+            className={cn(
+              "absolute top-0 left-0 w-full h-full transition-opacity duration-700 ease-in-out",
+              index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+            )}
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+              className={cn(
+                "w-full h-full object-cover",
+                imageClassName
+              )}
+            />
+            {overlay && (
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            )}
+            <div className="absolute bottom-1/3 left-0 p-4 md:p-6 text-white z-20">
+              <h3 className="font-canela text-3xl md:text-5xl mb-2">
+                {item.title}
+              </h3>
+              {item.subtitle && (
+                <p className="text-base md:text-lg max-w-md">{item.subtitle}</p>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
       {showControls && (
         <>
           <Button
+            onClick={prevSlide}
             variant="outline"
             size="icon"
-            className="absolute top-1/2 -translate-y-1/2 left-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 backdrop-blur-sm"
-            onClick={() => emblaApi?.scrollPrev()}
-            aria-label="Previous Slide"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 hover:text-white"
           >
-            <span className="sr-only">Previous Slide</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-              <path fillRule="evenodd" d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z" clipRule="evenodd" />
-            </svg>
+            <ArrowLeft className="h-5 w-5" />
           </Button>
           <Button
+            onClick={nextSlide}
             variant="outline"
             size="icon"
-            className="absolute top-1/2 -translate-y-1/2 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 backdrop-blur-sm"
-            onClick={() => emblaApi?.scrollNext()}
-            aria-label="Next Slide"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 hover:text-white"
           >
-            <span className="sr-only">Next Slide</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-              <path fillRule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" clipRule="evenodd" />
-            </svg>
+            <ArrowRight className="h-5 w-5" />
           </Button>
         </>
       )}
-      
-      <div className="embla" ref={emblaRef}>
-        <div className="embla__container h-full">
-          {items.map((item) => (
-            <div key={item.id} className="embla__slide relative">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="embla__content absolute inset-0 flex flex-col items-center justify-center text-center p-6 md:p-12">
-                <div className="max-w-4xl mx-auto">
-                  {item.heroTitle && (
-                    <h2 className={cn(
-                      "text-2xl md:text-3xl text-white/80 mb-2 font-suisse tracking-wide",
-                      heroTitleClassName
-                    )}>
-                      {item.heroTitle}
-                    </h2>
-                  )}
-                  <h1 className="font-suisse text-4xl md:text-5xl lg:text-6xl text-white mb-4">{item.title}</h1>
-                  <p className="text-white/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto">{item.subtitle}</p>
-                  <Button asChild size="lg" className="bg-oma-plum hover:bg-oma-plum/90">
-                    <Link to={item.link}>
-                      Explore Directory
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      
-      {scrollSnaps.length > 1 && (
-        <div className="absolute bottom-4 left-0 w-full flex justify-center gap-2 z-10">
-          {scrollSnaps.map((_, index) => (
+
+      {showIndicators && (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
+          {items.map((_, index) => (
             <button
               key={index}
-              className={`rounded-full w-3 h-3 transition-colors duration-300 ${selectedIndex === index ? 'bg-white' : 'bg-white/50 hover:bg-white/80'}`}
-              onClick={() => scrollTo(index)}
-              aria-label={`Slide ${index + 1}`}
+              onClick={() => goToSlide(index)}
+              className={cn(
+                "w-2 h-2 rounded-full transition-all",
+                index === currentIndex
+                  ? "bg-white w-6"
+                  : "bg-white/50 hover:bg-white/80"
+              )}
+              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
