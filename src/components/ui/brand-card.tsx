@@ -1,7 +1,7 @@
 
 import { Badge } from "./badge";
 import { cn } from "@/lib/utils";
-import { CheckCircle, Star } from "lucide-react";
+import { CheckCircle, Star, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export interface BrandCardProps {
@@ -29,7 +29,7 @@ export function BrandCard({
     <Link
       to={`/brand/${id}`}
       className={cn(
-        "group relative overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:scale-[1.03] shadow-sm hover:shadow-md",
+        "group relative overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:shadow-md",
         className
       )}
     >
@@ -65,7 +65,7 @@ export function BrandCard({
         )}
         <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <span className="text-sm text-oma-plum font-medium flex items-center">
-            View Profile <span className="ml-1 text-oma-gold">→</span>
+            View Profile <ArrowRight className="ml-1 h-3 w-3 text-oma-gold" />
           </span>
         </div>
       </div>

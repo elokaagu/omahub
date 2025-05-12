@@ -359,6 +359,100 @@ const brandsData = {
         image: "/lovable-uploads/020cb90b-2fee-4db4-a7ee-538515580ef2.png"
       }
     ]
+  },
+  "lagos-bridal-house": {
+    name: "Lagos Bridal House",
+    description: "Lagos Bridal House creates stunning bridal wear that blends traditional Nigerian elements with contemporary bridal fashion. Each gown is meticulously crafted to celebrate the uniqueness of every bride.",
+    longDescription: "Founded in 2010, Lagos Bridal House has established itself as a premier bridal design studio in West Africa. The brand is known for its attention to detail and ability to create gowns that honor cultural heritage while embracing modern silhouettes.\n\nEach creation begins with an extensive consultation, where the bride's vision, personal style, and cultural background are carefully considered. The skilled team of designers and artisans then work together to create a one-of-a-kind gown that tells the bride's unique story.\n\nLagos Bridal House is particularly known for incorporating traditional Nigerian textiles and beadwork into contemporary designs, creating pieces that are both timeless and distinctly African.",
+    location: "Lagos, Nigeria",
+    priceRange: "₦100,000 - ₦800,000",
+    category: "Bridal",
+    rating: 4.8,
+    reviews: [
+      {
+        author: "Amara Obi",
+        comment: "Lagos Bridal House created my dream wedding dress! The attention to detail and the way they incorporated my family's traditional patterns was absolutely perfect.",
+        rating: 5,
+        date: "2024-04-15"
+      },
+      {
+        author: "Folake Adeyemi",
+        comment: "I had such a wonderful experience working with Lagos Bridal House. They listened to all my ideas and created something even more beautiful than I imagined.",
+        rating: 5,
+        date: "2024-03-22"
+      },
+      {
+        author: "Chioma Nwosu",
+        comment: "The quality and craftsmanship of my gown was exceptional. I received so many compliments on my wedding day!",
+        rating: 4,
+        date: "2024-02-10"
+      }
+    ],
+    isVerified: true,
+    collections: [
+      {
+        id: 1,
+        title: "Traditional Fusion",
+        image: "/lovable-uploads/c798a99f-019b-4641-b458-32aaef54aaa2.png"
+      },
+      {
+        id: 2,
+        title: "Contemporary Bridal",
+        image: "/lovable-uploads/fd9289e6-2522-48c1-9fe4-42842504e746.png"
+      },
+      {
+        id: 3,
+        title: "Heritage Collection",
+        image: "/lovable-uploads/53ab4ec9-fd54-4aa8-a292-70669af33185.png"
+      }
+    ]
+  },
+  "afrique-elegance": {
+    name: "Afrique Elegance",
+    description: "Afrique Elegance specializes in creating ethereal bridal wear that celebrates the diversity of African cultures. Their designs feature thoughtful details and incorporate traditional techniques with a contemporary vision.",
+    longDescription: "Established in 2015 in Accra, Ghana, Afrique Elegance was founded by designer Ama Mensah with a vision to create bridal wear that honors the rich textile traditions of the African continent while embracing modern bridal aesthetics.\n\nThe atelier works with skilled artisans across West Africa to incorporate traditional techniques like handweaving, batik, and embroidery into contemporary designs. Each piece is a celebration of craftsmanship and cultural heritage.\n\nAfrique Elegance is particularly renowned for creating inclusive designs that cater to diverse body types and cultural backgrounds. Their bespoke service ensures that each bride's personal story and heritage are reflected in her wedding attire.",
+    location: "Accra, Ghana",
+    priceRange: "GH₵5,000 - GH₵50,000",
+    category: "Bridal",
+    rating: 4.9,
+    reviews: [
+      {
+        author: "Adjoa Mensah",
+        comment: "My experience with Afrique Elegance was magical from start to finish. They created a gown that perfectly blended my Ghanaian and French heritage.",
+        rating: 5,
+        date: "2024-04-02"
+      },
+      {
+        author: "Nana Akua",
+        comment: "The attention to detail and the quality of craftsmanship was beyond my expectations. I felt like royalty on my wedding day!",
+        rating: 5,
+        date: "2024-03-15"
+      },
+      {
+        author: "Abena Owusu",
+        comment: "Afrique Elegance created not just a wedding dress, but an heirloom piece that I hope to pass down to my daughter one day. Truly exceptional work.",
+        rating: 5,
+        date: "2024-02-28"
+      }
+    ],
+    isVerified: true,
+    collections: [
+      {
+        id: 1,
+        title: "Pan-African Collection",
+        image: "/lovable-uploads/c798a99f-019b-4641-b458-32aaef54aaa2.png"
+      },
+      {
+        id: 2,
+        title: "Kente Bridal Series",
+        image: "/lovable-uploads/eca14925-7de8-4100-af5d-b158ff70e951.png"
+      },
+      {
+        id: 3,
+        title: "Modern Heritage",
+        image: "/lovable-uploads/840e541a-b4c1-4e59-94af-89c8345e4d2d.png"
+      }
+    ]
   }
 };
 
