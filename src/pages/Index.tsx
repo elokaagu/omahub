@@ -38,22 +38,26 @@ const categories = [
   {
     title: "Bridal",
     image: "/lovable-uploads/57cc6a40-0f0d-4a7d-8786-41f15832ebfb.png",
-    href: "/directory?category=bridal"
+    href: "/directory?category=bridal",
+    customCta: "Tailored for \"Yes.\""
   },
   {
     title: "Ready-to-Wear",
     image: "/lovable-uploads/4a7c7e86-6cde-4d07-a246-a5aa4cb6fa51.png",
-    href: "/directory?category=rtw"
+    href: "/directory?category=rtw",
+    customCta: "Looks for the every day that isn't."
   },
   {
     title: "Tailoring",
     image: "/lovable-uploads/99ca757a-bed8-422e-b155-0b9d365b58e0.png",
-    href: "/directory?category=accessories"
+    href: "/directory?category=tailoring",
+    customCta: "Custom fits. Clean lines."
   },
   {
     title: "Accessories",
     image: "/lovable-uploads/25c3fe26-3fc4-43ef-83ac-6931a74468c0.png",
-    href: "/directory?category=accessories"
+    href: "/directory?category=accessories",
+    customCta: "The extras that make it extra."
   },
 ];
 
@@ -313,22 +317,38 @@ const Index = () => {
         />
       </section>
 
-      <section className="py-16 px-6 max-w-7xl mx-auto">
+      <section className="py-24 px-6 max-w-7xl mx-auto" id="categories">
         <SectionHeader 
-          title="Discover by Category"
-          subtitle="Explore the finest African designers across different specialties"
+          title="What Are You Dressing For?"
+          subtitle="Explore designers by occasion—from aisle-ready to Amalfi-bound."
           italic={true}
-          titleClassName="text-3xl md:text-4xl"
+          titleClassName="text-3xl md:text-4xl lg:text-5xl tracking-wide animate-fade-in font-source"
+          subtitleClassName="text-oma-cocoa/80 animate-fade-in"
         />
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
           {categories.map((category) => (
             <CategoryCard 
               key={category.title}
               title={category.title}
               image={category.image}
               href={category.href}
+              customCta={category.customCta}
+              className="hover-scale shadow-lg"
             />
+          ))}
+        </div>
+        
+        <div className="flex flex-wrap gap-3 justify-center mt-16 opacity-85">
+          <span className="text-xs font-suisse uppercase tracking-wider text-oma-cocoa/70 pt-1.5">Discover by:</span>
+          {["#Bridal", "#TravelLooks", "#EveningWear", "#Menswear", "#LuxuryTailors"].map((tag) => (
+            <Link 
+              key={tag} 
+              to={`/directory?tag=${tag.substring(1).toLowerCase()}`}
+              className="px-4 py-1.5 rounded-full bg-oma-beige/50 text-sm text-oma-cocoa hover:bg-oma-beige transition-colors duration-300"
+            >
+              {tag}
+            </Link>
           ))}
         </div>
       </section>
