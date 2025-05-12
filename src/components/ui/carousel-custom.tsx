@@ -134,7 +134,7 @@ export function Carousel({
                 <Button asChild className="bg-oma-gold hover:bg-oma-gold/90 text-oma-black font-medium px-6">
                   <Link to="/directory">Explore Designers</Link>
                 </Button>
-                <Button asChild variant="outline" className="border-white text-white hover:bg-white/20 font-medium px-6">
+                <Button asChild variant="outline" className="bg-white/20 border-white hover:bg-white/40 text-white hover:text-white font-medium px-6 backdrop-blur-sm">
                   <Link to="/how-it-works">How Oma Hub Works</Link>
                 </Button>
               </div>
