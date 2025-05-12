@@ -44,17 +44,8 @@ export function BrandRow({ title, brands }: BrandRowProps) {
           className="flex space-x-6 overflow-x-scroll scrollbar-hide snap-x snap-mandatory"
         >
           {brands.map((brand) => (
-            <div 
-              key={brand.id} 
-              className="w-[300px] flex-none snap-start group/card hover:scale-[1.02] transition-transform duration-300"
-            >
-              <BrandCard 
-                {...brand} 
-                className="group-hover/card:shadow-md"
-              />
-              <div className="absolute inset-0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/20 to-transparent h-1/3 rounded-b-2xl"></div>
-              </div>
+            <div key={brand.id} className="w-[300px] flex-none snap-start">
+              <BrandCard {...brand} />
             </div>
           ))}
         </div>

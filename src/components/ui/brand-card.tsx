@@ -29,7 +29,7 @@ export function BrandCard({
     <Link
       to={`/brand/${id}`}
       className={cn(
-        "relative overflow-hidden rounded-2xl bg-white transition-all duration-300 shadow-sm hover:shadow-md",
+        "group relative overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:scale-[1.03] shadow-sm hover:shadow-md",
         className
       )}
     >
@@ -37,7 +37,7 @@ export function BrandCard({
         <img
           src={image}
           alt={name}
-          className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+          className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105 rounded-2xl"
         />
       </div>
       <div className="p-4">
@@ -63,7 +63,7 @@ export function BrandCard({
             {location}
           </p>
         )}
-        <div className="mt-3 opacity-0 transition-opacity duration-300">
+        <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <span className="text-sm text-oma-plum font-medium flex items-center">
             View Profile <span className="ml-1 text-oma-gold">→</span>
           </span>
