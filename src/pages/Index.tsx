@@ -6,6 +6,7 @@ import { BrandRow } from "@/components/ui/brand-row";
 import { NewsletterForm } from "@/components/ui/newsletter-form";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { BrandCard } from "@/components/ui/brand-card";
 
 const carouselItems = [
   {
@@ -427,12 +428,109 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Bridal Designers Directory Section */}
+      <section className="py-16 px-6 bg-oma-cream">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader 
+            title="African Bridal Designers" 
+            subtitle="Discover trusted ateliers creating unforgettable moments."
+            italic={true}
+            titleClassName="text-3xl md:text-4xl lg:text-5xl font-source tracking-wide"
+            subtitleClassName="text-oma-cocoa/80 italic"
+          />
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+            {bridalBrands.map((brand) => (
+              <BrandCard 
+                key={brand.id}
+                id={brand.id}
+                name={brand.name}
+                image={brand.image}
+                category={brand.category}
+                location={brand.location}
+                rating={brand.rating}
+                isVerified={brand.isVerified}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Ready-to-Wear Collections */}
+      <section className="py-16 px-6 bg-oma-beige/30">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader 
+            title="Ready-to-Wear Collections" 
+            subtitle="Everyday luxury with an unmistakable African perspective."
+            italic={true}
+          />
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+            {rtwBrands.map((brand) => (
+              <BrandCard 
+                key={brand.id}
+                id={brand.id}
+                name={brand.name}
+                image={brand.image}
+                category={brand.category}
+                location={brand.location}
+                rating={brand.rating}
+                isVerified={brand.isVerified}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Expert Tailors */}
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
-          <BrandRow title="African Bridal Designers" brands={bridalBrands} />
-          <BrandRow title="Ready-to-Wear Collections" brands={rtwBrands} />
-          <BrandRow title="Expert Tailors" brands={tailoringBrands} />
-          <BrandRow title="Accessories & More" brands={accessoryBrands} />
+          <SectionHeader 
+            title="Expert Tailors" 
+            subtitle="Masters of craft creating perfectly fitted garments."
+            italic={true}
+          />
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+            {tailoringBrands.map((brand) => (
+              <BrandCard 
+                key={brand.id}
+                id={brand.id}
+                name={brand.name}
+                image={brand.image}
+                category={brand.category}
+                location={brand.location}
+                rating={brand.rating}
+                isVerified={brand.isVerified}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Accessories & More */}
+      <section className="py-16 px-6 bg-oma-beige/30">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeader 
+            title="Accessories & More" 
+            subtitle="Complete your look with statement pieces that celebrate heritage."
+            italic={true}
+          />
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+            {accessoryBrands.map((brand) => (
+              <BrandCard 
+                key={brand.id}
+                id={brand.id}
+                name={brand.name}
+                image={brand.image}
+                category={brand.category}
+                location={brand.location}
+                rating={brand.rating}
+                isVerified={brand.isVerified}
+              />
+            ))}
+          </div>
         </div>
       </section>
 

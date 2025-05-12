@@ -29,11 +29,11 @@ export function BrandCard({
     <Link
       to={`/brand/${id}`}
       className={cn(
-        "group relative overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:scale-[1.02] shadow-sm hover:shadow-md",
+        "group relative overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:scale-[1.03] shadow-sm hover:shadow-md",
         className
       )}
     >
-      <div className="aspect-[3/4] w-full overflow-hidden bg-gray-200 rounded-2xl">
+      <div className="aspect-[4/5] w-full overflow-hidden bg-gray-200 rounded-2xl">
         <img
           src={image}
           alt={name}
@@ -44,7 +44,12 @@ export function BrandCard({
         <div className="flex items-center justify-between">
           <h3 className="font-semibold text-lg">{name}</h3>
           {isVerified && (
-            <CheckCircle className="h-4 w-4 text-oma-gold" />
+            <div className="relative group cursor-help">
+              <CheckCircle className="h-4 w-4 text-oma-gold" />
+              <span className="absolute -top-10 right-0 bg-white px-2 py-1 text-xs rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+                Oma Verified Designer
+              </span>
+            </div>
           )}
         </div>
         <div className="mt-2 flex items-center gap-2">
@@ -53,7 +58,7 @@ export function BrandCard({
           </Badge>
           {rating && (
             <div className="flex items-center text-sm text-oma-cocoa">
-              <Star className="h-4 w-4 text-oma-gold mr-1" />
+              <Star className="h-4 w-4 text-oma-gold mr-1 fill-oma-gold" />
               <span>{rating.toFixed(1)}</span>
             </div>
           )}
@@ -63,6 +68,11 @@ export function BrandCard({
             {location}
           </p>
         )}
+        <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <span className="text-sm text-oma-plum font-medium flex items-center">
+            View Profile <span className="ml-1 text-oma-gold">→</span>
+          </span>
+        </div>
       </div>
     </Link>
   );
