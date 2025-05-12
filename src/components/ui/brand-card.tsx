@@ -29,7 +29,7 @@ export function BrandCard({
     <Link
       to={`/brand/${id}`}
       className={cn(
-        "group relative overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:scale-[1.03] shadow-sm hover:shadow-md",
+        "group relative overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:shadow-md",
         className
       )}
     >
@@ -42,7 +42,7 @@ export function BrandCard({
       </div>
       <div className="p-4">
         <div className="flex items-center justify-between">
-          <h3 className="font-semibold text-lg">{name}</h3>
+          <h3 className="font-semibold text-lg group-hover:text-oma-plum transition-colors">{name}</h3>
           {isVerified && (
             <CheckCircle className="h-4 w-4 text-oma-gold" />
           )}
