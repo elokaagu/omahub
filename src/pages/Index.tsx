@@ -64,24 +64,6 @@ const categories = [
 const brandsData = {
   bridalBrands: [
     {
-      id: "lagos-bridal-house",
-      name: "Lagos Bridal House",
-      image: "/lovable-uploads/c798a99f-019b-4641-b458-32aaef54aaa2.png",
-      category: "Bridal",
-      location: "Lagos",
-      rating: 4.8,
-      isVerified: true
-    },
-    {
-      id: "afrique-elegance",
-      name: "Afrique Elegance",
-      image: "/lovable-uploads/c798a99f-019b-4641-b458-32aaef54aaa2.png",
-      category: "Bridal",
-      location: "Accra",
-      rating: 4.9,
-      isVerified: true
-    },
-    {
       id: "zora-atelier",
       name: "Zora Atelier",
       image: "/lovable-uploads/53ab4ec9-fd54-4aa8-a292-70669af33185.png",
@@ -91,9 +73,27 @@ const brandsData = {
       isVerified: true
     },
     {
+      id: "lagos-bridal",
+      name: "Lagos Bridal House",
+      image: "/lovable-uploads/fd9289e6-2522-48c1-9fe4-42842504e746.png",
+      category: "Bridal",
+      location: "Lagos",
+      rating: 4.8,
+      isVerified: true
+    },
+    {
+      id: "afrique-elegance",
+      name: "Afrique Elegance",
+      image: "/lovable-uploads/eca14925-7de8-4100-af5d-b158ff70e951.png",
+      category: "Bridal",
+      location: "Accra",
+      rating: 4.9,
+      isVerified: true
+    },
+    {
       id: "casablanca-bridal",
       name: "Casablanca Bridal",
-      image: "/lovable-uploads/6183fae4-f92f-4c73-82e6-2ae82fb027f9.png",
+      image: "/lovable-uploads/023ba098-0109-4738-9baf-1321bc3d2fe1.png",
       category: "Bridal",
       location: "Casablanca",
       rating: 4.7,

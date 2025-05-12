@@ -83,24 +83,6 @@ const allBrands = [
     category: "Accessories",
     location: "Kumasi",
     isVerified: true
-  },
-  {
-    id: "lagos-bridal-house",
-    name: "Lagos Bridal House",
-    image: "/lovable-uploads/c798a99f-019b-4641-b458-32aaef54aaa2.png",
-    category: "Bridal",
-    location: "Lagos",
-    rating: 4.8,
-    isVerified: true
-  },
-  {
-    id: "afrique-elegance",
-    name: "Afrique Elegance",
-    image: "/lovable-uploads/c798a99f-019b-4641-b458-32aaef54aaa2.png",
-    category: "Bridal",
-    location: "Accra",
-    rating: 4.9,
-    isVerified: true
   }
 ];
 
