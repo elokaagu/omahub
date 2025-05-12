@@ -1,14 +1,30 @@
+
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Search } from 'lucide-react';
+import { Menu, X, Search, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { SearchModal } from '@/components/ui/search-modal';
+import { 
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+
+const collectionItems = [
+  { name: 'Bridal', href: '/directory?category=bridal' },
+  { name: 'Ready-to-Wear', href: '/directory?category=rtw' },
+  { name: 'Occasion', href: '/directory?category=occasion' },
+];
 
 const navigation = [
   { name: 'Home', href: '/' },
+  { name: 'Designers', href: '/directory' },
+  { name: 'How It Works', href: '/how-it-works' },
   { name: 'About', href: '/about' },
-  { name: 'Directory', href: '/directory' },
 ];
 
 export default function Header() {
@@ -44,6 +60,66 @@ export default function Header() {
               />
             </Link>
           </div>
+          
+          <div className="hidden lg:flex lg:gap-x-2">
+            <NavigationMenu>
+              <NavigationMenuList>
+                {navigation.map((item) => (
+                  <NavigationMenuItem key={item.name}>
+                    <NavigationMenuLink
+                      asChild
+                      className="text-sm font-semibold leading-6 text-oma-black hover:text-oma-plum expand-underline px-3 py-2"
+                    >
+                      <Link to={item.href}>{item.name}</Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                ))}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-sm font-semibold leading-6 text-oma-black hover:text-oma-plum">
+                    New Collections
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-1 p-2">
+                      {collectionItems.map((item) => (
+                        <li key={item.name}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={item.href}
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-oma-beige hover:text-oma-plum focus:bg-oma-beige focus:text-oma-plum"
+                            >
+                              <div className="text-sm font-semibold leading-none">{item.name}</div>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
+          
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 items-center">
+            <div className="relative">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="hover:bg-oma-beige"
+                onClick={() => setSearchOpen(true)}
+              >
+                <Search className="h-5 w-5" />
+              </Button>
+            </div>
+            
+            <Button asChild variant="outline" className="border-oma-plum text-oma-plum hover:bg-oma-plum hover:text-white transition-all">
+              <Link to="/directory">Explore the Directory</Link>
+            </Button>
+            
+            <Button asChild className="bg-oma-plum hover:bg-oma-plum/90 transition-all">
+              <Link to="/join">Join as a Designer</Link>
+            </Button>
+          </div>
+          
           <div className="flex lg:hidden">
             <button
               type="button"
@@ -53,30 +129,6 @@ export default function Header() {
               <span className="sr-only">Open main menu</span>
               <Menu className="h-6 w-6" aria-hidden="true" />
             </button>
-          </div>
-          <div className="hidden lg:flex lg:gap-x-8">
-            {navigation.map((item) => (
-              <Link 
-                key={item.name} 
-                to={item.href} 
-                className="text-sm font-semibold leading-6 text-oma-black hover:text-oma-plum expand-underline"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="hover:bg-oma-beige"
-              onClick={() => setSearchOpen(true)}
-            >
-              <Search className="h-5 w-5" />
-            </Button>
-            <Button asChild className="bg-oma-plum hover:bg-oma-plum/90">
-              <Link to="/join">Join the Hub</Link>
-            </Button>
           </div>
         </nav>
 
@@ -111,15 +163,56 @@ export default function Header() {
                       {item.name}
                     </Link>
                   ))}
+                  
+                  <div className="-mx-3 block rounded-lg px-3 py-2">
+                    <div className="flex justify-between items-center text-base font-semibold leading-7 text-oma-black">
+                      New Collections
+                      <ChevronDown className="h-4 w-4" />
+                    </div>
+                    <div className="pl-4 mt-1 space-y-2">
+                      {collectionItems.map((item) => (
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          className="block rounded-lg px-3 py-2 text-base leading-7 text-oma-black hover:bg-oma-beige"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <div className="py-6">
-                  <Link
-                    to="/join"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white bg-oma-plum hover:bg-oma-plum/90 text-center"
+                
+                <div className="py-6 flex flex-col gap-3">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="border-oma-plum text-oma-plum hover:bg-oma-plum hover:text-white w-full"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Join the Hub
-                  </Link>
+                    <Link to="/directory">Explore the Directory</Link>
+                  </Button>
+                  
+                  <Button
+                    asChild
+                    className="bg-oma-plum hover:bg-oma-plum/90 w-full"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <Link to="/join">Join as a Designer</Link>
+                  </Button>
+                  
+                  <Button
+                    variant="ghost"
+                    className="w-full flex items-center justify-center gap-2"
+                    onClick={() => {
+                      setSearchOpen(true);
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    <Search className="h-5 w-5" />
+                    Search
+                  </Button>
                 </div>
               </div>
             </div>

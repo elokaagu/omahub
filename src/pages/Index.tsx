@@ -12,22 +12,25 @@ const carouselItems = [
     id: 1,
     image: "/lovable-uploads/827fb8c0-e5da-4520-a979-6fc054eefc6e.png",
     title: "New Season Collections",
-    subtitle: "Discover the latest pieces from Africa's most innovative designers",
-    link: "/directory"
+    subtitle: "Tailored looks for weddings, travel, and every moment in between.",
+    link: "/directory",
+    heroTitle: "Made to Measure. Made to Remember.",
   },
   {
     id: 2,
     image: "/lovable-uploads/bb152c0b-6378-419b-a0e6-eafce44631b2.png",
     title: "Modern African Bridal",
-    subtitle: "Redefining tradition with contemporary elegance",
-    link: "/directory/bridal"
+    subtitle: "Tailored looks for weddings, travel, and every moment in between.",
+    link: "/directory/bridal",
+    heroTitle: "Made to Measure. Made to Remember.",
   },
   {
     id: 3,
     image: "/lovable-uploads/de2841a8-58d1-4fd4-adfa-8c9aa09e9bb2.png",
     title: "Spotlight: Lagos Fashion Week",
-    subtitle: "Meet the designers shaping the future of Nigerian fashion",
-    link: "/directory/rtw"
+    subtitle: "Tailored looks for weddings, travel, and every moment in between.",
+    link: "/directory/rtw",
+    heroTitle: "Made to Measure. Made to Remember.",
   }
 ];
 
@@ -305,7 +308,8 @@ const Index = () => {
           autoplay={true} 
           interval={6000}
           aspectRatio="wide"
-          className="[&_.embla__content_h1]:font-canela [&_.embla__content_h1]:text-5xl [&_.embla__content_h1]:md:text-6xl"
+          className="h-[90vh] max-h-[800px]"
+          heroTitleClassName="font-canela text-5xl md:text-7xl mb-4"
         />
       </section>
 

@@ -1,7 +1,9 @@
+
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "./button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 interface CarouselProps {
   items: {
@@ -10,6 +12,7 @@ interface CarouselProps {
     title: string;
     subtitle?: string;
     link?: string;
+    heroTitle?: string;
   }[];
   autoplay?: boolean;
   interval?: number;
@@ -19,6 +22,7 @@ interface CarouselProps {
   showIndicators?: boolean;
   aspectRatio?: "video" | "square" | "portrait" | "wide" | "auto";
   overlay?: boolean;
+  heroTitleClassName?: string;
 }
 
 export function Carousel({
@@ -31,6 +35,7 @@ export function Carousel({
   showIndicators = true,
   aspectRatio = "wide",
   overlay = true,
+  heroTitleClassName,
 }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const timeoutRef = useRef<number | null>(null);
@@ -111,13 +116,32 @@ export function Carousel({
             {overlay && (
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             )}
-            <div className="absolute bottom-1/3 left-0 p-4 md:p-6 text-white z-20">
-              <h3 className="font-canela text-3xl md:text-5xl mb-2">
-                {item.title}
-              </h3>
-              {item.subtitle && (
-                <p className="text-base md:text-lg max-w-md">{item.subtitle}</p>
+            
+            {/* Hero content */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-20 px-4">
+              {item.heroTitle && (
+                <h1 className={cn("font-canela text-4xl md:text-6xl lg:text-7xl mb-3 max-w-4xl mx-auto animate-fade-in", heroTitleClassName)}>
+                  {item.heroTitle}
+                </h1>
               )}
+              {item.subtitle && (
+                <p className="text-base md:text-xl max-w-2xl mx-auto mb-8 animate-fade-in">
+                  {item.subtitle}
+                </p>
+              )}
+              
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
+                <Button asChild className="bg-oma-gold hover:bg-oma-gold/90 text-oma-black font-medium px-6">
+                  <Link to="/directory">Explore Designers</Link>
+                </Button>
+                <Button asChild variant="outline" className="border-white text-white hover:bg-white/20 font-medium px-6">
+                  <Link to="/how-it-works">How Oma Hub Works</Link>
+                </Button>
+              </div>
+              
+              <div className="mt-8 opacity-85 italic text-sm md:text-base max-w-md text-center animate-fade-in">
+                <p>&quot;She booked her whole holiday wardrobe in 30 mins. Be like her.&quot;</p>
+              </div>
             </div>
           </div>
         ))}
